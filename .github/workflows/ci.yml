@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           repository: NousResearch/hermes-agent
-          ref: main
+          ref: 7a1b1d8d1123c3eb7c774b2eeaef6986cccc95c9
           path: hermes-agent
       - uses: astral-sh/setup-uv@e92bafb6253dcd438e0484186d7669ea7a8ca1cc # v6.4.3
       - name: Install Hermes and pytest
