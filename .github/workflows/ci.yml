@@ -18,7 +18,8 @@ jobs:
       - name: Install Hermes and pytest
         run: |
           uv venv --python 3.14
-          uv pip install -e hermes-agent pytest
+          # Run inside the checkout so Hermes' own [tool.uv] dependency overrides apply.
+          (cd hermes-agent && uv pip install --python "$GITHUB_WORKSPACE/.venv/bin/python" -e . pytest)
           echo "$GITHUB_WORKSPACE/.venv/bin" >> "$GITHUB_PATH"
           echo "HERMES_HOME=$RUNNER_TEMP/hh" >> "$GITHUB_ENV"
       - run: python scripts/sync_shared.py --check
