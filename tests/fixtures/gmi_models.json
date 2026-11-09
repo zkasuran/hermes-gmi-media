@@ -1,0 +1,3806 @@
+{
+ "captured": "2026-11-09",
+ "source": "GET https://console.gmicloud.ai/api/v1/ie/requestqueue/apikey/models/{id}",
+ "models": [
+  {
+   "model": "seedream-5.0-lite",
+   "display_name": "seedream-5.0-lite",
+   "model_type": "image",
+   "status": "active",
+   "qworkers": 1,
+   "modalities": {
+    "input": [
+     {
+      "type": "text",
+      "required": true
+     },
+     {
+      "type": "image",
+      "required": false
+     }
+    ],
+    "output": [
+     {
+      "type": "image",
+      "required": true
+     }
+    ]
+   },
+   "model_metadata": {
+    "visibility": "visible",
+    "delivery_mode": "async"
+   },
+   "parameters": [
+    {
+     "name": "prompt",
+     "display_name": "Text Prompt",
+     "description": "Text prompt for image generation (recommended < 600 words).",
+     "type": "string",
+     "required": true,
+     "default_value": "",
+     "order": 1
+    },
+    {
+     "name": "image",
+     "display_name": "Reference Images",
+     "description": "Reference image URL or an array of URLs (jpeg/png). Up to 14 images are supported.",
+     "type": "image",
+     "required": false,
+     "default_value": null,
+     "max_value": 14,
+     "order": 2
+    },
+    {
+     "name": "size",
+     "display_name": "Size",
+     "description": "Method 1: '2K', '3K'. Method 2: 'WxH' (Total pixels: 3.6M to 10.4M; Aspect Ratio: 1/16 to 16).",
+     "type": "enum",
+     "required": false,
+     "default_value": "2048x2048",
+     "options": [
+      {
+       "value": "2K",
+       "display_name": "2K"
+      },
+      {
+       "value": "3K",
+       "display_name": "3K"
+      },
+      {
+       "value": "2304x4096",
+       "display_name": "2304x4096 (9:16)"
+      },
+      {
+       "value": "2496x3744",
+       "display_name": "2496x3744 (2:3)"
+      },
+      {
+       "value": "2592x3456",
+       "display_name": "2592x3456 (3:4)"
+      },
+      {
+       "value": "3072x3072",
+       "display_name": "3072x3072 (1:1)"
+      },
+      {
+       "value": "3456x2592",
+       "display_name": "3456x2592 (4:3)"
+      },
+      {
+       "value": "3744x2496",
+       "display_name": "3744x2496 (3:2)"
+      },
+      {
+       "value": "4096x2304",
+       "display_name": "4096x2304 (16:9)"
+      },
+      {
+       "value": "4704x2016",
+       "display_name": "4074x2016 (21:9)"
+      },
+      {
+       "value": "3072x3072",
+       "display_name": "3072x3072 (1:1)"
+      }
+     ],
+     "order": 3
+    },
+    {
+     "name": "sequential_image_generation",
+     "display_name": "Sequential Image Generation",
+     "description": "Generate a sequence of related images automatically.",
+     "type": "enum",
+     "required": false,
+     "default_value": "disabled",
+     "options": [
+      {
+       "value": "disabled",
+       "display_name": "Disabled"
+      },
+      {
+       "value": "auto",
+       "display_name": "Auto"
+      }
+     ],
+     "order": 4
+    },
+    {
+     "name": "max_images",
+     "display_name": "Max Images (when seq=auto)",
+     "description": "Total(reference+generated) \u2264 15.",
+     "type": "integer",
+     "required": false,
+     "default_value": 1,
+     "min_value": 1,
+     "max_value": 15,
+     "step": 1,
+     "order": 5
+    },
+    {
+     "name": "output_format",
+     "display_name": "Output Format",
+     "description": "Exclusively for seedream-5.0-lite. Specifies the file format of the generated image.",
+     "type": "enum",
+     "required": false,
+     "default_value": "jpeg",
+     "options": [
+      {
+       "value": "jpeg",
+       "display_name": "JPEG"
+      },
+      {
+       "value": "png",
+       "display_name": "PNG"
+      }
+     ],
+     "order": 6
+    },
+    {
+     "name": "watermark",
+     "display_name": "Watermark",
+     "description": "Whether to include an watermark saying AI Generated in the bottom right corner.",
+     "type": "boolean",
+     "required": false,
+     "default_value": false,
+     "order": 7
+    }
+   ],
+   "price_info": {
+    "pricing_type": "per image",
+    "price": 35000,
+    "unit": "image"
+   },
+   "pricing_details": "$0.035 per image"
+  },
+  {
+   "model": "seedream-3-0-t2i-250415",
+   "display_name": "seedream-3-0-t2i-250415",
+   "model_type": "image",
+   "status": "active",
+   "qworkers": 1,
+   "modalities": {
+    "input": [
+     {
+      "type": "text",
+      "required": true
+     }
+    ],
+    "output": [
+     {
+      "type": "image",
+      "required": true
+     }
+    ]
+   },
+   "model_metadata": {
+    "provider_info": {},
+    "visibility": "visible",
+    "delivery_mode": "async"
+   },
+   "parameters": [
+    {
+     "name": "prompt",
+     "display_name": "Text Prompt",
+     "description": "Text prompt for image generation.",
+     "type": "string",
+     "required": true,
+     "default_value": "",
+     "order": 1
+    },
+    {
+     "name": "size",
+     "display_name": "Size",
+     "description": "Output image dimensions.",
+     "type": "enum",
+     "required": false,
+     "default_value": "1024x1024",
+     "options": [
+      {
+       "value": "1024x1024",
+       "display_name": "1024\u00d71024 (1:1)"
+      },
+      {
+       "value": "1152x864",
+       "display_name": "1152\u00d7864 (4:3)"
+      },
+      {
+       "value": "864x1152",
+       "display_name": "864\u00d71152 (3:4)"
+      },
+      {
+       "value": "1280x720",
+       "display_name": "1280\u00d7720 (16:9)"
+      },
+      {
+       "value": "720x1280",
+       "display_name": "720\u00d71280 (9:16)"
+      },
+      {
+       "value": "1248x832",
+       "display_name": "1248\u00d7832 (3:2)"
+      },
+      {
+       "value": "832x1248",
+       "display_name": "832\u00d71248 (2:3)"
+      },
+      {
+       "value": "1512x648",
+       "display_name": "1512\u00d7648 (21:9)"
+      }
+     ],
+     "order": 2
+    },
+    {
+     "name": "seed",
+     "display_name": "Seed",
+     "description": "Random seed. Use -1 for random seed.",
+     "type": "integer",
+     "required": false,
+     "default_value": -1,
+     "min_value": -1,
+     "max_value": 2147483647,
+     "step": 1,
+     "order": 3
+    },
+    {
+     "name": "guidance_scale",
+     "display_name": "Guidance Scale",
+     "description": "Higher value makes the image follow the prompt more closely.",
+     "type": "float",
+     "required": false,
+     "default_value": 2.5,
+     "min_value": 1,
+     "max_value": 10,
+     "step": 0.1,
+     "order": 4
+    },
+    {
+     "name": "watermark",
+     "display_name": "Watermark",
+     "description": "Whether to include watermark in the output.",
+     "type": "boolean",
+     "required": false,
+     "default_value": false,
+     "order": 5
+    }
+   ],
+   "price_info": {
+    "pricing_type": "per image",
+    "price": 50000,
+    "unit": "image"
+   },
+   "pricing_details": ""
+  },
+  {
+   "model": "gpt-image-2-generate",
+   "display_name": "gpt-image-2-generate",
+   "model_type": "image",
+   "status": "active",
+   "qworkers": 1,
+   "modalities": {
+    "input": [
+     {
+      "type": "text",
+      "required": true
+     }
+    ],
+    "output": [
+     {
+      "type": "image",
+      "required": true
+     }
+    ]
+   },
+   "model_metadata": {
+    "provider_info": {
+     "provider": "OpenAI"
+    },
+    "visibility": "visible",
+    "delivery_mode": "sync"
+   },
+   "parameters": [
+    {
+     "name": "prompt",
+     "display_name": "Prompt",
+     "description": "Text description of the image to generate.",
+     "type": "string",
+     "required": true,
+     "default_value": "",
+     "order": 1
+    },
+    {
+     "name": "size",
+     "display_name": "Image Size",
+     "description": "Output resolution and aspect ratio.",
+     "type": "string",
+     "required": false,
+     "default_value": "1024x1024",
+     "order": 2
+    },
+    {
+     "name": "quality",
+     "display_name": "Quality",
+     "description": "Image quality level \u2014 affects detail and cost.",
+     "type": "enum",
+     "required": false,
+     "default_value": "medium",
+     "options": [
+      {
+       "value": "low",
+       "display_name": "Low"
+      },
+      {
+       "value": "medium",
+       "display_name": "Medium"
+      },
+      {
+       "value": "high",
+       "display_name": "High"
+      },
+      {
+       "value": "auto",
+       "display_name": "Auto"
+      }
+     ],
+     "order": 3
+    },
+    {
+     "name": "n",
+     "display_name": "Number of Images",
+     "description": "Number of images to generate (1\u201310).",
+     "type": "integer",
+     "required": false,
+     "default_value": 1,
+     "min_value": 1,
+     "max_value": 10,
+     "order": 4
+    },
+    {
+     "name": "output_format",
+     "display_name": "Output Format",
+     "description": "File format of the generated image.",
+     "type": "enum",
+     "required": false,
+     "default_value": "png",
+     "options": [
+      {
+       "value": "png",
+       "display_name": "PNG"
+      },
+      {
+       "value": "jpeg",
+       "display_name": "JPEG"
+      }
+     ],
+     "order": 5
+    }
+   ],
+   "price_info": {
+    "pricing_type": "per-image pricing",
+    "price": 60000,
+    "unit": "image"
+   },
+   "pricing_details": "Per image: low 1024x1024=$0.010, low 1024x1536=$0.020; medium 1024x1024=$0.060, medium 1024x1536=$0.120; high 1024x1024=$0.220, high 1024x1536=$0.440"
+  },
+  {
+   "model": "gemini-2.5-flash-image",
+   "display_name": "gemini-2.5-flash-image",
+   "model_type": "image",
+   "status": "active",
+   "qworkers": 1,
+   "modalities": {
+    "input": [
+     {
+      "type": "text",
+      "required": true
+     },
+     {
+      "type": "image",
+      "required": false
+     }
+    ],
+    "output": [
+     {
+      "type": "image",
+      "required": true
+     }
+    ]
+   },
+   "model_metadata": {
+    "provider_info": {
+     "provider": "Gemini"
+    },
+    "visibility": "visible",
+    "delivery_mode": "sync"
+   },
+   "parameters": [
+    {
+     "name": "prompt",
+     "display_name": "Text Prompt",
+     "description": "Primary text prompt describing the image to create or edit.",
+     "type": "string",
+     "required": false,
+     "default_value": "",
+     "order": 1
+    },
+    {
+     "name": "image",
+     "display_name": "Reference Images",
+     "description": "Optional reference image URLs (up to 3). Supported formats: PNG, JPEG, WebP, HEIC, HEIF. Max 7MB inline or 30MB from GCS.",
+     "type": "image",
+     "required": false,
+     "default_value": "",
+     "max_value": 3,
+     "order": 2
+    },
+    {
+     "name": "aspect_ratio",
+     "display_name": "Aspect Ratio",
+     "description": "Aspect ratio of the generated image.",
+     "type": "enum",
+     "required": false,
+     "default_value": "1:1",
+     "options": [
+      {
+       "value": "1:1",
+       "display_name": "1:1"
+      },
+      {
+       "value": "3:2",
+       "display_name": "3:2"
+      },
+      {
+       "value": "2:3",
+       "display_name": "2:3"
+      },
+      {
+       "value": "3:4",
+       "display_name": "3:4"
+      },
+      {
+       "value": "4:3",
+       "display_name": "4:3"
+      },
+      {
+       "value": "4:5",
+       "display_name": "4:5"
+      },
+      {
+       "value": "5:4",
+       "display_name": "5:4"
+      },
+      {
+       "value": "9:16",
+       "display_name": "9:16"
+      },
+      {
+       "value": "16:9",
+       "display_name": "16:9"
+      },
+      {
+       "value": "21:9",
+       "display_name": "21:9"
+      }
+     ],
+     "order": 3
+    },
+    {
+     "name": "contents",
+     "display_name": "Conversation History (multi-turn mode)",
+     "description": "Multi-turn conversation history for iterative image editing. Each turn contains role (user/model) and parts (text, inlineData with base64, or fileData with GCS URI). When provided, 'prompt' and 'image' are ignored.",
+     "type": "string",
+     "required": false,
+     "default_value": "",
+     "order": 4
+    }
+   ],
+   "price_info": {
+    "pricing_type": "per-image output ($30/1M tokens, 1290 tokens/image)",
+    "price": 38700,
+    "unit": "image"
+   },
+   "pricing_details": "For input, $0.30 per 1M tokens\nFor image output, $30 per 1M tokens (1290 tokens/image \u2248 $0.0387/image)\nFor text output, $2.50 per 1M tokens"
+  },
+  {
+   "model": "luma-uni-1.1",
+   "display_name": "luma-uni-1.1",
+   "model_type": "image",
+   "status": "active",
+   "qworkers": 1,
+   "modalities": {
+    "input": [
+     {
+      "type": "text",
+      "required": true
+     },
+     {
+      "type": "image",
+      "required": false
+     }
+    ],
+    "output": [
+     {
+      "type": "image",
+      "required": true
+     }
+    ]
+   },
+   "model_metadata": {
+    "provider_info": {
+     "provider": "Luma"
+    },
+    "visibility": "visible",
+    "delivery_mode": "async"
+   },
+   "parameters": [
+    {
+     "name": "prompt",
+     "display_name": "Prompt",
+     "description": "Text description of the image to generate or edit.",
+     "type": "string",
+     "required": true,
+     "default_value": "",
+     "order": 1
+    },
+    {
+     "name": "aspect_ratio",
+     "display_name": "Aspect Ratio",
+     "description": "Output aspect ratio of the generated image.",
+     "type": "enum",
+     "required": false,
+     "default_value": "1:1",
+     "options": [
+      {
+       "value": "3:1",
+       "display_name": "Ultra-wide landscape (3:1)"
+      },
+      {
+       "value": "2:1",
+       "display_name": "Wide landscape (2:1)"
+      },
+      {
+       "value": "16:9",
+       "display_name": "Standard widescreen (16:9)"
+      },
+      {
+       "value": "3:2",
+       "display_name": "Classic landscape (3:2)"
+      },
+      {
+       "value": "1:1",
+       "display_name": "Square (1:1)"
+      },
+      {
+       "value": "2:3",
+       "display_name": "Classic portrait (2:3)"
+      },
+      {
+       "value": "9:16",
+       "display_name": "Standard portrait (9:16)"
+      },
+      {
+       "value": "1:2",
+       "display_name": "Tall portrait (1:2)"
+      },
+      {
+       "value": "1:3",
+       "display_name": "Ultra-tall portrait (1:3)"
+      }
+     ],
+     "order": 2
+    },
+    {
+     "name": "style",
+     "display_name": "Style",
+     "description": "Style preset. 'manga' applies manga/anime aesthetic. Note: manga only works with portrait aspect ratios (2:3, 9:16, 1:2, 1:3).",
+     "type": "enum",
+     "required": false,
+     "default_value": "auto",
+     "options": [
+      {
+       "value": "auto",
+       "display_name": "Auto (model picks best style)"
+      },
+      {
+       "value": "manga",
+       "display_name": "Manga (anime aesthetic, portrait only)"
+      }
+     ],
+     "order": 3
+    },
+    {
+     "name": "output_format",
+     "display_name": "Output Format",
+     "description": "Output image format. Leave unset to let the model pick based on the prompt.",
+     "type": "enum",
+     "required": false,
+     "default_value": "",
+     "options": [
+      {
+       "value": "",
+       "display_name": "Auto (model picks)"
+      },
+      {
+       "value": "png",
+       "display_name": "PNG (lossless quality)"
+      },
+      {
+       "value": "jpeg",
+       "display_name": "JPEG (smaller file size)"
+      }
+     ],
+     "order": 4
+    },
+    {
+     "name": "web_search",
+     "display_name": "Web Search",
+     "description": "When enabled, the model searches the web for visual references before generating. Adds a few seconds but improves accuracy for real-world subjects.",
+     "type": "boolean",
+     "required": false,
+     "default_value": false,
+     "order": 5
+    },
+    {
+     "name": "image",
+     "display_name": "Source Image (Edit Mode)",
+     "description": "Source image URL for editing mode. When provided, switches to image_edit \u2014 the model modifies this image based on your prompt while preserving unmentioned parts. Output dimensions match the source; aspect_ratio is ignored in edit mode.",
+     "type": "image",
+     "required": false,
+     "default_value": "",
+     "order": 6
+    }
+   ],
+   "price_info": {
+    "pricing_type": "per image",
+    "price": 40400,
+    "unit": "image"
+   },
+   "pricing_details": "Uni-1 T2I: $0.0404/image | Uni-1 edit: $0.0434/image"
+  },
+  {
+   "model": "Kling-Text2Video-V1.6-Standard",
+   "display_name": "Kling-Text2Video-V1.6-Standard",
+   "model_type": "video",
+   "status": "active",
+   "qworkers": 1,
+   "modalities": {
+    "input": [
+     {
+      "type": "text",
+      "required": true
+     }
+    ],
+    "output": [
+     {
+      "type": "video",
+      "required": true
+     }
+    ]
+   },
+   "model_metadata": {
+    "provider_info": {
+     "provider": "Kling"
+    },
+    "visibility": "visible",
+    "delivery_mode": "async"
+   },
+   "parameters": [
+    {
+     "name": "prompt",
+     "display_name": "Text Prompt",
+     "description": "Positive text prompt. Cannot exceed 2500 characters",
+     "type": "string",
+     "required": false,
+     "default_value": "",
+     "order": 1
+    },
+    {
+     "name": "negative_prompt",
+     "display_name": "Negative Prompt",
+     "description": "Negative text prompt. Cannot exceed 2500 characters",
+     "type": "string",
+     "required": false,
+     "default_value": "",
+     "order": 2
+    },
+    {
+     "name": "duration",
+     "display_name": "Video Length",
+     "description": "Video Length, unit: s (seconds)",
+     "type": "enum",
+     "required": false,
+     "default_value": "5",
+     "options": [
+      {
+       "value": "5",
+       "display_name": "5 seconds"
+      },
+      {
+       "value": "10",
+       "display_name": "10 seconds"
+      }
+     ],
+     "order": 3
+    },
+    {
+     "name": "aspect_ratio",
+     "display_name": "Aspect Ratio",
+     "description": "The aspect ratio of the generated video frame (width:height)",
+     "type": "enum",
+     "required": false,
+     "default_value": "16:9",
+     "options": [
+      {
+       "value": "16:9",
+       "display_name": "16:9"
+      },
+      {
+       "value": "9:16",
+       "display_name": "9:16"
+      },
+      {
+       "value": "1:1",
+       "display_name": "1:1"
+      }
+     ],
+     "order": 4
+    },
+    {
+     "name": "cfg_scale",
+     "display_name": "CFG Scale",
+     "description": "Flexibility in video generation; The higher the value, the lower the model's degree of flexibility, and the stronger the relevance to the user's prompt.",
+     "type": "float",
+     "required": false,
+     "default_value": 0.5,
+     "min_value": 0,
+     "max_value": 1,
+     "step": 0.1,
+     "order": 5
+    }
+   ],
+   "price_info": {
+    "pricing_type": "video length based pricing",
+    "price": 56000,
+    "unit": "second"
+   },
+   "pricing_details": ""
+  },
+  {
+   "model": "Minimax-Hailuo-02",
+   "display_name": "Minimax-Hailuo-02",
+   "model_type": "video",
+   "status": "active",
+   "qworkers": 1,
+   "modalities": {
+    "input": [
+     {
+      "type": "text",
+      "required": true
+     },
+     {
+      "type": "image",
+      "required": false
+     }
+    ],
+    "output": [
+     {
+      "type": "video",
+      "required": true
+     }
+    ]
+   },
+   "model_metadata": {
+    "provider_info": {
+     "provider": "Minimax"
+    },
+    "visibility": "visible",
+    "delivery_mode": "async"
+   },
+   "parameters": [
+    {
+     "name": "prompt",
+     "display_name": "Text Prompt",
+     "description": "Text description of the video to generate (max 2000 characters). Supports camera movement instructions like [Tilt Left], [Pan Right], etc.",
+     "type": "string",
+     "required": true,
+     "default_value": "",
+     "order": 1
+    },
+    {
+     "name": "duration",
+     "display_name": "Duration",
+     "description": "Video duration in seconds. \n1080P is not available for 10s videos.",
+     "type": "enum",
+     "required": false,
+     "default_value": 6,
+     "options": [
+      {
+       "value": 6,
+       "display_name": "6 seconds"
+      },
+      {
+       "value": 10,
+       "display_name": "10 seconds"
+      }
+     ],
+     "order": 2
+    },
+    {
+     "name": "resolution",
+     "display_name": "Resolution",
+     "description": "available resolution for 6s video: 512P, 768P, 1080P;\n available resolution for 10s video: 512P, 768P.",
+     "type": "enum",
+     "required": false,
+     "default_value": "768P",
+     "options": [
+      {
+       "value": "512P",
+       "display_name": "512P"
+      },
+      {
+       "value": "768P",
+       "display_name": "768P"
+      },
+      {
+       "value": "1080P",
+       "display_name": "1080P"
+      }
+     ],
+     "order": 3
+    },
+    {
+     "name": "first_frame_image",
+     "display_name": "First Frame Image",
+     "description": "The model will use the image passed in this parameter as the first frame to generate a video. \n- When the resolution is 512P, It is required parameter; \n- When the resolution is 768P or 1080P, It is optional parameter.",
+     "type": "first_frame_image",
+     "required": false,
+     "default_value": "",
+     "max_value": 1,
+     "order": 4
+    },
+    {
+     "name": "last_frame_image",
+     "display_name": "Last Frame Image",
+     "description": "The model will use the image passed in this parameter to generate the final frame of the video. \n- 512P resolution is not supported when using the last frame parameter. \n- When the aspect ratios of the first and last frame images are inconsistent, the model will generate the video based on the aspect ratio of the first frame and crop the last frame. ",
+     "type": "last_frame_image",
+     "required": false,
+     "default_value": "",
+     "max_value": 1,
+     "order": 5
+    },
+    {
+     "name": "prompt_optimizer",
+     "display_name": "Enable Prompt Optimization",
+     "description": "Automatically optimize prompt for better generation quality",
+     "type": "boolean",
+     "required": false,
+     "default_value": true,
+     "order": 5
+    },
+    {
+     "name": "fast_pretreatment",
+     "display_name": "Fast Pretreatment",
+     "description": "Reduce processing time during prompt optimization",
+     "type": "boolean",
+     "required": false,
+     "default_value": false,
+     "order": 6
+    }
+   ],
+   "price_info": {
+    "pricing_type": "video length based pricing",
+    "price": 60000,
+    "unit": "second"
+   },
+   "pricing_details": ""
+  },
+  {
+   "model": "Minimax-Hailuo-2.3-Fast",
+   "display_name": "Minimax-Hailuo-2.3-Fast",
+   "model_type": "video",
+   "status": "active",
+   "qworkers": 1,
+   "modalities": {
+    "input": [
+     {
+      "type": "text",
+      "required": true
+     },
+     {
+      "type": "image",
+      "required": true
+     }
+    ],
+    "output": [
+     {
+      "type": "video",
+      "required": true
+     }
+    ]
+   },
+   "model_metadata": {
+    "visibility": "visible",
+    "delivery_mode": "async"
+   },
+   "parameters": [
+    {
+     "name": "prompt",
+     "display_name": "Text Prompt",
+     "description": "Text description of the video to generate (max 2000 characters). Supports camera movement instructions like [Tilt Left], [Pan Right].",
+     "type": "string",
+     "required": true,
+     "default_value": "",
+     "order": 1
+    },
+    {
+     "name": "first_frame_image",
+     "display_name": "First Frame Image",
+     "description": "The model will use this image as the first frame. This field is required",
+     "type": "first_frame_image",
+     "required": true,
+     "default_value": "",
+     "max_value": 1,
+     "order": 2
+    },
+    {
+     "name": "duration",
+     "display_name": "Duration",
+     "description": "Video duration in seconds. 1080P is not available for 10s videos.",
+     "type": "enum",
+     "required": false,
+     "default_value": 6,
+     "options": [
+      {
+       "value": 6,
+       "display_name": "6 seconds"
+      },
+      {
+       "value": 10,
+       "display_name": "10 seconds"
+      }
+     ],
+     "order": 4
+    },
+    {
+     "name": "resolution",
+     "display_name": "Resolution",
+     "description": "Available resolution for 6s: 512P, 768P, 1080P; for 10s: 512P, 768P.",
+     "type": "enum",
+     "required": false,
+     "default_value": "768P",
+     "options": [
+      {
+       "value": "768P",
+       "display_name": "768P"
+      },
+      {
+       "value": "1080P",
+       "display_name": "1080P"
+      }
+     ],
+     "order": 5
+    },
+    {
+     "name": "prompt_optimizer",
+     "display_name": "Enable Prompt Optimization",
+     "description": "Automatically optimize prompt for better generation quality.",
+     "type": "boolean",
+     "required": false,
+     "default_value": true,
+     "order": 6
+    },
+    {
+     "name": "fast_pretreatment",
+     "display_name": "Fast Pretreatment",
+     "description": "Reduce processing time during prompt optimization.",
+     "type": "boolean",
+     "required": false,
+     "default_value": false,
+     "order": 7
+    }
+   ],
+   "price_info": {
+    "pricing_type": "video length based pricing",
+    "price": 32000,
+    "unit": "second"
+   },
+   "pricing_details": ""
+  },
+  {
+   "model": "Veo3-Fast",
+   "display_name": "Veo3-Fast",
+   "model_type": "video",
+   "status": "active",
+   "qworkers": 1,
+   "modalities": {
+    "input": [
+     {
+      "type": "text",
+      "required": true
+     },
+     {
+      "type": "image",
+      "required": false
+     }
+    ],
+    "output": [
+     {
+      "type": "video",
+      "required": true
+     }
+    ]
+   },
+   "model_metadata": {
+    "provider_info": {
+     "provider": "VertexAI"
+    },
+    "visibility": "invisible",
+    "delivery_mode": "async"
+   },
+   "parameters": [
+    {
+     "name": "prompt",
+     "display_name": "Text Prompt",
+     "description": "The text prompt used to guide video generation.",
+     "type": "string",
+     "required": true,
+     "default_value": "",
+     "order": 1
+    },
+    {
+     "name": "image",
+     "display_name": "Reference Image",
+     "description": "Reference image",
+     "type": "image",
+     "required": false,
+     "default_value": null,
+     "max_value": 1,
+     "order": 2
+    },
+    {
+     "name": "durationSeconds",
+     "display_name": "Video Duration",
+     "description": "The length of video files that you want to generate. Accepted integer values are 4, 6, 8.",
+     "type": "enum",
+     "required": true,
+     "default_value": "8",
+     "options": [
+      {
+       "value": "8",
+       "display_name": "8 seconds"
+      },
+      {
+       "value": "6",
+       "display_name": "6 seconds"
+      },
+      {
+       "value": "4",
+       "display_name": "4 seconds"
+      }
+     ],
+     "order": 3
+    },
+    {
+     "name": "generateAudio",
+     "display_name": "Generate Audio",
+     "description": "Generate audio for the video",
+     "type": "boolean",
+     "required": false,
+     "default_value": true,
+     "order": 4
+    },
+    {
+     "name": "resolution",
+     "display_name": "Resolution",
+     "description": "The resolution of the generated video.",
+     "type": "enum",
+     "required": false,
+     "default_value": "720p",
+     "options": [
+      {
+       "value": "720p",
+       "display_name": "720p"
+      },
+      {
+       "value": "1080p",
+       "display_name": "1080p"
+      }
+     ],
+     "order": 4
+    },
+    {
+     "name": "aspectRatio",
+     "display_name": "Aspect Ratio",
+     "description": "Defines the aspect ratio of the generated videos. Values: 16:9 (default, landscape) or 9:16 (portrait).",
+     "type": "enum",
+     "required": false,
+     "default_value": "16:9",
+     "options": [
+      {
+       "value": "16:9",
+       "display_name": "Landscape (16:9)"
+      },
+      {
+       "value": "9:16",
+       "display_name": "Portrait (9:16)"
+      }
+     ],
+     "order": 5
+    },
+    {
+     "name": "negativePrompt",
+     "display_name": "Negative Prompt",
+     "description": "Describe what you don't want to see in the video. Helps avoid unwanted elements or styles.",
+     "type": "string",
+     "required": false,
+     "default_value": "",
+     "order": 6
+    },
+    {
+     "name": "personGeneration",
+     "display_name": "Person Generation",
+     "description": "Control whether people can appear in the generated video. 'Allow Adults' permits adult figures, 'No People' excludes all human figures.",
+     "type": "enum",
+     "required": false,
+     "default_value": "allow_all",
+     "options": [
+      {
+       "value": "allow_all",
+       "display_name": "Allow All"
+      },
+      {
+       "value": "allow_adult",
+       "display_name": "Allow Adults"
+      },
+      {
+       "value": "disallow",
+       "display_name": "No People"
+      }
+     ],
+     "order": 7
+    },
+    {
+     "name": "seed",
+     "display_name": "Seed (Advanced)",
+     "description": "Random seed for reproducible results. Use the same seed with identical parameters to generate similar videos. Leave empty for random generation.",
+     "type": "integer",
+     "required": false,
+     "default_value": null,
+     "min_value": 0,
+     "max_value": 4294967295,
+     "order": 8
+    }
+   ],
+   "price_info": {
+    "pricing_type": "video length based pricing",
+    "price": 150000,
+    "unit": "second"
+   },
+   "pricing_details": ""
+  },
+  {
+   "model": "kling-v2-6",
+   "display_name": "kling-v2-6",
+   "model_type": "video",
+   "status": "active",
+   "qworkers": 1,
+   "modalities": {
+    "input": [
+     {
+      "type": "text",
+      "required": true
+     },
+     {
+      "type": "image",
+      "required": false
+     }
+    ],
+    "output": [
+     {
+      "type": "video",
+      "required": true
+     }
+    ]
+   },
+   "model_metadata": {
+    "provider_info": {
+     "provider": "Kling"
+    },
+    "visibility": "visible",
+    "delivery_mode": "async"
+   },
+   "parameters": [
+    {
+     "name": "prompt",
+     "display_name": "Text Prompt",
+     "description": "Primary text prompt (up to ~2500 chars) describing the image to create.",
+     "type": "string",
+     "required": false,
+     "default_value": "",
+     "order": 1
+    },
+    {
+     "name": "image",
+     "display_name": "Reference Images",
+     "description": "Support image URL. \nSupported image formats include.jpg / .jpeg / .png\nThe image file size cannot exceed 10MB, andthe width and height dimensions of the image shall not be less than 300px, and the aspect ratio of the image should be between 1:2.5 ~ 2.5:1",
+     "type": "image",
+     "required": false,
+     "default_value": "",
+     "max_value": 1,
+     "order": 2
+    },
+    {
+     "name": "sound",
+     "display_name": "Sound",
+     "description": "whether the video is generated with sound or not",
+     "type": "enum",
+     "required": false,
+     "default_value": "off",
+     "options": [
+      {
+       "value": "on",
+       "display_name": "on"
+      },
+      {
+       "value": "off",
+       "display_name": "off"
+      }
+     ],
+     "order": 3
+    },
+    {
+     "name": "mode",
+     "display_name": "Mode",
+     "description": "",
+     "type": "enum",
+     "required": false,
+     "default_value": "pro",
+     "options": [
+      {
+       "value": "pro",
+       "display_name": "pro"
+      }
+     ],
+     "order": 4
+    },
+    {
+     "name": "duration",
+     "display_name": "Video Length",
+     "description": "Video Length, unit: s (seconds)",
+     "type": "enum",
+     "required": false,
+     "default_value": "5",
+     "options": [
+      {
+       "value": "5",
+       "display_name": "5 seconds"
+      },
+      {
+       "value": "10",
+       "display_name": "10 seconds"
+      }
+     ],
+     "order": 5
+    },
+    {
+     "name": "cfg_scale",
+     "display_name": "CFG Scale",
+     "description": "Flexibility in video generation; The higher the value, the lower the model's degree of flexibility, and the stronger the relevance to the user's prompt.",
+     "type": "float",
+     "required": false,
+     "default_value": 0.5,
+     "min_value": 0,
+     "max_value": 1,
+     "step": 0.1,
+     "order": 6
+    }
+   ],
+   "price_info": {
+    "pricing_type": "video length based pricing",
+    "price": 70000,
+    "unit": "second"
+   },
+   "pricing_details": "$0.07 per second (no audio), $0.14 per second (with audio)"
+  },
+  {
+   "model": "happyhorse-1.0-t2v",
+   "display_name": "happyhorse-1.0-t2v",
+   "model_type": "video",
+   "status": "active",
+   "qworkers": 1,
+   "modalities": {
+    "input": [
+     {
+      "type": "text",
+      "required": true
+     },
+     {
+      "type": "audio",
+      "required": false
+     }
+    ],
+    "output": [
+     {
+      "type": "video",
+      "required": true
+     }
+    ]
+   },
+   "model_metadata": {
+    "visibility": "visible",
+    "delivery_mode": "async"
+   },
+   "parameters": [
+    {
+     "name": "prompt",
+     "display_name": "Text Prompt",
+     "description": "- The prompt describes the desired elements and visual features in the generated video.\n\n- Chinese and English are supported. Each Chinese character or letter counts as one character. Text exceeding the limit is automatically truncated.",
+     "type": "string",
+     "required": true,
+     "default_value": "",
+     "max_value": 2500,
+     "order": 1
+    },
+    {
+     "name": "resolution",
+     "display_name": "Resolution",
+     "description": "Specifies the resolution tier for the generated video.",
+     "type": "enum",
+     "required": false,
+     "default_value": "1080P",
+     "options": [
+      {
+       "value": "720P",
+       "display_name": "720P"
+      },
+      {
+       "value": "1080P",
+       "display_name": "1080P"
+      }
+     ],
+     "order": 4
+    },
+    {
+     "name": "duration",
+     "display_name": "Duration",
+     "description": "The duration of the generated video, in seconds. Affects pricing.",
+     "type": "integer",
+     "required": false,
+     "default_value": 5,
+     "min_value": 3,
+     "max_value": 15,
+     "order": 6
+    },
+    {
+     "name": "watermark",
+     "display_name": "Add Watermark",
+     "description": "Specifies whether to add a watermark. The watermark contains the fixed text `AI Generated` and is placed in the lower-right corner of the video.",
+     "type": "boolean",
+     "required": false,
+     "default_value": true,
+     "order": 8
+    }
+   ],
+   "price_info": {
+    "pricing_type": "video length based pricing",
+    "price": 280000,
+    "unit": "second"
+   },
+   "pricing_details": "720P: $0.14/second; 1080P: $0.28/second"
+  },
+  {
+   "model": "inworld-tts-1.5-mini",
+   "display_name": "Realtime-tts-1.5-mini",
+   "model_type": "audio",
+   "status": "active",
+   "qworkers": 1,
+   "modalities": {
+    "input": [
+     {
+      "type": "text",
+      "required": true
+     }
+    ],
+    "output": [
+     {
+      "type": "audio",
+      "required": true
+     }
+    ]
+   },
+   "model_metadata": {
+    "visibility": "visible",
+    "delivery_mode": "async"
+   },
+   "parameters": [
+    {
+     "name": "text",
+     "display_name": "Text Content",
+     "description": "The text to be synthesized into speech. Maximum input of 2,000 characters.",
+     "type": "string",
+     "required": true,
+     "default_value": "",
+     "order": 1
+    },
+    {
+     "name": "voice_id",
+     "display_name": "Voice",
+     "description": "The voice to use for speech synthesis. 65 voices across 16 languages available.",
+     "type": "enum",
+     "required": true,
+     "default_value": "Dennis",
+     "options": [
+      {
+       "value": "Alex",
+       "display_name": "Alex (EN) - Energetic male, friendly"
+      },
+      {
+       "value": "Ashley",
+       "display_name": "Ashley (EN) - Warm female, mellow"
+      },
+      {
+       "value": "Blake",
+       "display_name": "Blake (EN) - Intimate male, romantic"
+      },
+      {
+       "value": "Carter",
+       "display_name": "Carter (EN) - Radio announcer, motivational"
+      },
+      {
+       "value": "Clive",
+       "display_name": "Clive (EN) - British male, calm"
+      },
+      {
+       "value": "Craig",
+       "display_name": "Craig (EN) - British elder male, refined"
+      },
+      {
+       "value": "Deborah",
+       "display_name": "Deborah (EN) - Gentle female, elegant"
+      },
+      {
+       "value": "Dennis",
+       "display_name": "Dennis (EN) - Smooth male, friendly"
+      },
+      {
+       "value": "Dominus",
+       "display_name": "Dominus (EN) - Robotic male, menacing"
+      },
+      {
+       "value": "Edward",
+       "display_name": "Edward (EN) - Emphatic male, streetwise"
+      },
+      {
+       "value": "Elizabeth",
+       "display_name": "Elizabeth (EN) - Professional female, calm"
+      },
+      {
+       "value": "Hades",
+       "display_name": "Hades (EN) - Commanding male, gruff"
+      },
+      {
+       "value": "Hana",
+       "display_name": "Hana (EN) - Bright female, playful"
+      },
+      {
+       "value": "Julia",
+       "display_name": "Julia (EN) - Quirky female, high-pitched"
+      },
+      {
+       "value": "Luna",
+       "display_name": "Luna (EN) - Calm female, relaxing"
+      },
+      {
+       "value": "Mark",
+       "display_name": "Mark (EN) - Energetic male, articulate"
+      },
+      {
+       "value": "Olivia",
+       "display_name": "Olivia (EN) - British female, upbeat"
+      },
+      {
+       "value": "Pixie",
+       "display_name": "Pixie (EN) - Childlike female, cartoonish"
+      },
+      {
+       "value": "Priya",
+       "display_name": "Priya (EN) - Female, Indian accent"
+      },
+      {
+       "value": "Ronald",
+       "display_name": "Ronald (EN) - British male, deep"
+      },
+      {
+       "value": "Sarah",
+       "display_name": "Sarah (EN) - Young female, upbeat"
+      },
+      {
+       "value": "Shaun",
+       "display_name": "Shaun (EN) - Friendly male, casual"
+      },
+      {
+       "value": "Theodore",
+       "display_name": "Theodore (EN) - Gravelly male, elderly"
+      },
+      {
+       "value": "Timothy",
+       "display_name": "Timothy (EN) - Lively male, upbeat"
+      },
+      {
+       "value": "Wendy",
+       "display_name": "Wendy (EN) - British female, posh"
+      },
+      {
+       "value": "Yichen",
+       "display_name": "Yichen (\u4e2d\u6587) - \u5e74\u8f7b\u7537\u58f0, \u6e05\u6670\u53cb\u597d"
+      },
+      {
+       "value": "Xiaoyin",
+       "display_name": "Xiaoyin (\u4e2d\u6587) - \u5e74\u8f7b\u5973\u58f0, \u6e29\u67d4\u751c\u7f8e"
+      },
+      {
+       "value": "Xinyi",
+       "display_name": "Xinyi (\u4e2d\u6587) - \u5973\u58f0, \u4e13\u4e1a\u6e29\u6696"
+      },
+      {
+       "value": "Jing",
+       "display_name": "Jing (\u4e2d\u6587) - \u5973\u58f0, \u6d3b\u529b\u5feb\u8282\u594f"
+      },
+      {
+       "value": "Asuka",
+       "display_name": "Asuka (\u65e5\u672c\u8a9e) - \u82e5\u3044\u5973\u6027, \u5143\u6c17"
+      },
+      {
+       "value": "Satoshi",
+       "display_name": "Satoshi (\u65e5\u672c\u8a9e) - \u7537\u6027, \u8868\u73fe\u529b\u8c4a\u304b"
+      },
+      {
+       "value": "Hyunwoo",
+       "display_name": "Hyunwoo (\ud55c\uad6d\uc5b4) - \uc80a\uc740 \ub0a8\uc131, \ub530\ub73b\ud568"
+      },
+      {
+       "value": "Minji",
+       "display_name": "Minji (\ud55c\uad6d\uc5b4) - \uc80a\uc740 \uc5ec\uc131, \ubc1d\uc74c"
+      },
+      {
+       "value": "Seojun",
+       "display_name": "Seojun (\ud55c\uad6d\uc5b4) - \uc131\uc219 \ub0a8\uc131, \uae4a\uc74c"
+      },
+      {
+       "value": "Yoona",
+       "display_name": "Yoona (\ud55c\uad6d\uc5b4) - \uc5ec\uc131, \ubd80\ub4dc\ub7ec\uc6c0"
+      },
+      {
+       "value": "Alain",
+       "display_name": "Alain (FR) - Homme, voix profonde"
+      },
+      {
+       "value": "H\u00e9l\u00e8ne",
+       "display_name": "H\u00e9l\u00e8ne (FR) - Femme, musicale"
+      },
+      {
+       "value": "Mathieu",
+       "display_name": "Mathieu (FR) - Homme, robuste"
+      },
+      {
+       "value": "\u00c9tienne",
+       "display_name": "\u00c9tienne (FR) - Jeune homme, calme"
+      },
+      {
+       "value": "Johanna",
+       "display_name": "Johanna (DE) - Frau, tiefe Stimme"
+      },
+      {
+       "value": "Josef",
+       "display_name": "Josef (DE) - Mann, artikuliert"
+      },
+      {
+       "value": "Diego",
+       "display_name": "Diego (ES) - Hombre, suave"
+      },
+      {
+       "value": "Lupita",
+       "display_name": "Lupita (ES) - Mujer joven, vibrante"
+      },
+      {
+       "value": "Miguel",
+       "display_name": "Miguel (ES) - Hombre, c\u00e1lido"
+      },
+      {
+       "value": "Rafael",
+       "display_name": "Rafael (ES) - Hombre maduro, profundo"
+      },
+      {
+       "value": "Gianni",
+       "display_name": "Gianni (IT) - Uomo, voce profonda"
+      },
+      {
+       "value": "Orietta",
+       "display_name": "Orietta (IT) - Donna, rilassante"
+      },
+      {
+       "value": "Heitor",
+       "display_name": "Heitor (PT-BR) - Homem, neutro"
+      },
+      {
+       "value": "Mait\u00ea",
+       "display_name": "Mait\u00ea (PT-BR) - Mulher, tranquilizante"
+      },
+      {
+       "value": "Svetlana",
+       "display_name": "Svetlana (RU) - \u0416\u0435\u043d\u0449\u0438\u043d\u0430, \u043c\u044f\u0433\u043a\u0438\u0439"
+      },
+      {
+       "value": "Elena",
+       "display_name": "Elena (RU) - \u0416\u0435\u043d\u0449\u0438\u043d\u0430, \u044f\u0441\u043d\u044b\u0439"
+      },
+      {
+       "value": "Dmitry",
+       "display_name": "Dmitry (RU) - \u041c\u0443\u0436\u0447\u0438\u043d\u0430, \u0433\u043b\u0443\u0431\u043e\u043a\u0438\u0439"
+      },
+      {
+       "value": "Nikolai",
+       "display_name": "Nikolai (RU) - \u041c\u0443\u0436\u0447\u0438\u043d\u0430, \u0434\u0440\u0430\u043c\u0430\u0442\u0438\u0447\u043d\u044b\u0439"
+      },
+      {
+       "value": "Erik",
+       "display_name": "Erik (NL) - Man, sterk"
+      },
+      {
+       "value": "Katrien",
+       "display_name": "Katrien (NL) - Vrouw, expressief"
+      },
+      {
+       "value": "Lennart",
+       "display_name": "Lennart (NL) - Man, zelfverzekerd"
+      },
+      {
+       "value": "Lore",
+       "display_name": "Lore (NL) - Vrouw, helder"
+      },
+      {
+       "value": "Szymon",
+       "display_name": "Szymon (PL) - M\u0119\u017cczyzna, ciep\u0142y"
+      },
+      {
+       "value": "Wojciech",
+       "display_name": "Wojciech (PL) - M\u0119\u017cczyzna, pewny"
+      },
+      {
+       "value": "Riya",
+       "display_name": "Riya (HI) - \u092e\u0939\u093f\u0932\u093e, \u092a\u0947\u0936\u0947\u0935\u0930"
+      },
+      {
+       "value": "Manoj",
+       "display_name": "Manoj (HI) - \u092a\u0941\u0930\u0941\u0937, \u0938\u094d\u092a\u0937\u094d\u091f"
+      },
+      {
+       "value": "Yael",
+       "display_name": "Yael (HE) - \u05d0\u05d9\u05e9\u05d4, \u05e0\u05d9\u05d8\u05e8\u05dc\u05d9"
+      },
+      {
+       "value": "Oren",
+       "display_name": "Oren (HE) - \u05d2\u05d1\u05e8, \u05de\u05e7\u05e6\u05d5\u05e2\u05d9"
+      },
+      {
+       "value": "Nour",
+       "display_name": "Nour (AR) - \u0627\u0645\u0631\u0623\u0629, \u0648\u062f\u0648\u062f\u0629"
+      },
+      {
+       "value": "Omar",
+       "display_name": "Omar (AR) - \u0631\u062c\u0644, \u0648\u0627\u062b\u0642"
+      }
+     ],
+     "order": 2
+    },
+    {
+     "name": "audio_encoding",
+     "display_name": "Audio Format",
+     "description": "The desired output format of the synthesized audio. LINEAR16 includes WAV header.",
+     "type": "enum",
+     "required": false,
+     "default_value": "MP3",
+     "options": [
+      {
+       "value": "MP3",
+       "display_name": "MP3"
+      },
+      {
+       "value": "LINEAR16",
+       "display_name": "WAV"
+      },
+      {
+       "value": "OGG_OPUS",
+       "display_name": "OGG Opus"
+      },
+      {
+       "value": "FLAC",
+       "display_name": "FLAC"
+      }
+     ],
+     "order": 3
+    },
+    {
+     "name": "sample_rate_hertz",
+     "display_name": "Sample Rate",
+     "description": "The synthesis sample rate in Hz. Default is 48000. Supported: 8000, 16000, 22050, 24000, 32000, 44100, 48000.",
+     "type": "enum",
+     "required": false,
+     "default_value": 48000,
+     "options": [
+      {
+       "value": 8000,
+       "display_name": "8000 Hz"
+      },
+      {
+       "value": 16000,
+       "display_name": "16000 Hz"
+      },
+      {
+       "value": 22050,
+       "display_name": "22050 Hz"
+      },
+      {
+       "value": 24000,
+       "display_name": "24000 Hz"
+      },
+      {
+       "value": 32000,
+       "display_name": "32000 Hz"
+      },
+      {
+       "value": 44100,
+       "display_name": "44100 Hz"
+      },
+      {
+       "value": 48000,
+       "display_name": "48000 Hz"
+      }
+     ],
+     "order": 4
+    },
+    {
+     "name": "speaking_rate",
+     "display_name": "Speaking Rate",
+     "description": "Speaking rate/speed, in the range [0.5, 1.5]. Default is 1.0. Values above 0.8 recommended for high quality.",
+     "type": "float",
+     "required": false,
+     "default_value": 1,
+     "min_value": 0.5,
+     "max_value": 1.5,
+     "step": 0.1,
+     "order": 5
+    },
+    {
+     "name": "bit_rate",
+     "display_name": "Bit Rate",
+     "description": "Bits per second of the audio. Only for compressed formats (MP3, OGG_OPUS). Default is 128000.",
+     "type": "integer",
+     "required": false,
+     "default_value": 128000,
+     "min_value": 128000,
+     "max_value": 128000,
+     "order": 6
+    },
+    {
+     "name": "temperature",
+     "display_name": "Temperature",
+     "description": "Randomness when sampling audio tokens (0-2). Default 1.1. Higher values produce more expressive results.",
+     "type": "float",
+     "required": false,
+     "default_value": 1,
+     "min_value": 0,
+     "max_value": 2,
+     "step": 0.1,
+     "order": 7
+    },
+    {
+     "name": "timestamp_type",
+     "display_name": "Timestamp Type",
+     "description": "Controls timestamp metadata returned. WORD includes phoneticDetails with viseme symbols for lip-sync. Enabling adds latency.",
+     "type": "enum",
+     "required": false,
+     "default_value": "TIMESTAMP_TYPE_UNSPECIFIED",
+     "options": [
+      {
+       "value": "TIMESTAMP_TYPE_UNSPECIFIED",
+       "display_name": "None (fastest)"
+      },
+      {
+       "value": "WORD",
+       "display_name": "Word alignment (with phonemes)"
+      },
+      {
+       "value": "CHARACTER",
+       "display_name": "Character alignment"
+      }
+     ],
+     "order": 8
+    },
+    {
+     "name": "apply_text_normalization",
+     "display_name": "Text Normalization",
+     "description": "Automatically expands numbers, dates, times, and abbreviations. OFF reduces latency but reads text exactly as written.",
+     "type": "enum",
+     "required": false,
+     "default_value": "APPLY_TEXT_NORMALIZATION_UNSPECIFIED",
+     "options": [
+      {
+       "value": "APPLY_TEXT_NORMALIZATION_UNSPECIFIED",
+       "display_name": "Auto"
+      },
+      {
+       "value": "ON",
+       "display_name": "On"
+      },
+      {
+       "value": "OFF",
+       "display_name": "Off"
+      }
+     ],
+     "order": 9
+    }
+   ],
+   "price_info": {
+    "pricing_type": "per 1000 character",
+    "price": 5000,
+    "unit": "character"
+   },
+   "pricing_details": ""
+  },
+  {
+   "model": "minimax-tts-speech-2.6-turbo",
+   "display_name": "minimax-tts-speech-2.6-turbo",
+   "model_type": "audio",
+   "status": "active",
+   "qworkers": 1,
+   "modalities": {
+    "input": [
+     {
+      "type": "text",
+      "required": true
+     }
+    ],
+    "output": [
+     {
+      "type": "audio",
+      "required": true
+     }
+    ]
+   },
+   "model_metadata": {
+    "visibility": "visible",
+    "delivery_mode": "async"
+   },
+   "parameters": [
+    {
+     "name": "text",
+     "display_name": "Text Content",
+     "description": "Text content to be converted to speech.",
+     "type": "string",
+     "required": true,
+     "default_value": "",
+     "order": 1
+    },
+    {
+     "name": "voice_id",
+     "display_name": "Voice",
+     "description": "Voice ID for speech synthesis.",
+     "type": "enum",
+     "required": false,
+     "default_value": "English_expressive_narrator",
+     "options": [
+      {
+       "value": "English_expressive_narrator",
+       "display_name": "Expressive Narrator"
+      },
+      {
+       "value": "English_radiant_girl",
+       "display_name": "Radiant Girl"
+      },
+      {
+       "value": "English_magnetic_voiced_man",
+       "display_name": "Magnetic-voiced Male"
+      },
+      {
+       "value": "English_compelling_lady1",
+       "display_name": "Compelling Lady"
+      },
+      {
+       "value": "English_Aussie_Bloke",
+       "display_name": "Aussie Bloke"
+      },
+      {
+       "value": "English_captivating_female1",
+       "display_name": "Captivating Female"
+      },
+      {
+       "value": "English_Upbeat_Woman",
+       "display_name": "Upbeat Woman"
+      },
+      {
+       "value": "English_Trustworth_Man",
+       "display_name": "Trustworthy Man"
+      },
+      {
+       "value": "English_CalmWoman",
+       "display_name": "Calm Woman"
+      },
+      {
+       "value": "English_UpsetGirl",
+       "display_name": "Upset Girl"
+      },
+      {
+       "value": "English_Gentle-voiced_man",
+       "display_name": "Gentle-voiced Man"
+      },
+      {
+       "value": "English_Whispering_girl",
+       "display_name": "Whispering girl"
+      },
+      {
+       "value": "English_Diligent_Man",
+       "display_name": "Diligent Man"
+      },
+      {
+       "value": "English_Graceful_Lady",
+       "display_name": "Graceful Lady"
+      },
+      {
+       "value": "English_ReservedYoungMan",
+       "display_name": "Reserved Young Man"
+      },
+      {
+       "value": "English_PlayfulGirl",
+       "display_name": "Playful Girl"
+      },
+      {
+       "value": "English_ManWithDeepVoice",
+       "display_name": "Man With Deep Voice"
+      },
+      {
+       "value": "English_MaturePartner",
+       "display_name": "Mature Partner"
+      },
+      {
+       "value": "English_FriendlyPerson",
+       "display_name": "Friendly Guy"
+      },
+      {
+       "value": "English_MatureBoss",
+       "display_name": "Bossy Lady"
+      },
+      {
+       "value": "English_Debator",
+       "display_name": "Male Debater"
+      },
+      {
+       "value": "English_LovelyGirl",
+       "display_name": "Lovely Girl"
+      },
+      {
+       "value": "English_Steadymentor",
+       "display_name": "Reliable Man"
+      },
+      {
+       "value": "English_Deep-VoicedGentleman",
+       "display_name": "Deep-voiced Gentleman"
+      },
+      {
+       "value": "English_Wiselady",
+       "display_name": "Wise Lady"
+      },
+      {
+       "value": "English_CaptivatingStoryteller",
+       "display_name": "Captivating Storyteller"
+      },
+      {
+       "value": "English_DecentYoungMan",
+       "display_name": "Decent Young Man"
+      },
+      {
+       "value": "English_SentimentalLady",
+       "display_name": "Sentimental Lady"
+      },
+      {
+       "value": "English_ImposingManner",
+       "display_name": "Imposing Queen"
+      },
+      {
+       "value": "English_SadTeen",
+       "display_name": "Teen Boy"
+      },
+      {
+       "value": "English_PassionateWarrior",
+       "display_name": "Passionate Warrior"
+      },
+      {
+       "value": "English_WiseScholar",
+       "display_name": "Wise Scholar"
+      },
+      {
+       "value": "English_Soft-spokenGirl",
+       "display_name": "Soft-Spoken Girl"
+      },
+      {
+       "value": "English_SereneWoman",
+       "display_name": "Serene Woman"
+      },
+      {
+       "value": "English_ConfidentWoman",
+       "display_name": "Confident Woman"
+      },
+      {
+       "value": "English_PatientMan",
+       "display_name": "Patient Man"
+      },
+      {
+       "value": "English_Comedian",
+       "display_name": "Comedian"
+      },
+      {
+       "value": "English_BossyLeader",
+       "display_name": "Bossy Leader"
+      },
+      {
+       "value": "English_Strong-WilledBoy",
+       "display_name": "Strong-Willed Boy"
+      },
+      {
+       "value": "English_StressedLady",
+       "display_name": "Stressed Lady"
+      },
+      {
+       "value": "English_AssertiveQueen",
+       "display_name": "Assertive Queen"
+      },
+      {
+       "value": "English_AnimeCharacter",
+       "display_name": "Female Narrator"
+      },
+      {
+       "value": "English_Jovialman",
+       "display_name": "Jovial Man"
+      },
+      {
+       "value": "English_WhimsicalGirl",
+       "display_name": "Whimsical Girl"
+      },
+      {
+       "value": "English_Kind-heartedGirl",
+       "display_name": "Kind-Hearted Girl"
+      },
+      {
+       "value": "Chinese (Mandarin)_Reliable_Executive",
+       "display_name": "Reliable Executive (Chinese)"
+      },
+      {
+       "value": "Chinese (Mandarin)_News_Anchor",
+       "display_name": "News Anchor (Chinese)"
+      },
+      {
+       "value": "Chinese (Mandarin)_Unrestrained_Young_Man",
+       "display_name": "Unrestrained Young Man (Chinese)"
+      },
+      {
+       "value": "Chinese (Mandarin)_Mature_Woman",
+       "display_name": "Mature Woman (Chinese)"
+      },
+      {
+       "value": "Arrogant_Miss",
+       "display_name": "Arrogant Miss (Chinese)"
+      },
+      {
+       "value": "Robot_Armor",
+       "display_name": "Robot Armor (Chinese)"
+      },
+      {
+       "value": "Chinese (Mandarin)_Kind-hearted_Antie",
+       "display_name": "Kind-hearted Antie (Chinese)"
+      },
+      {
+       "value": "Chinese (Mandarin)_HK_Flight_Attendant",
+       "display_name": "HK Flight Attendant (Chinese)"
+      },
+      {
+       "value": "Chinese (Mandarin)_Humorous_Elder",
+       "display_name": "Humorous Elder (Chinese)"
+      },
+      {
+       "value": "Chinese (Mandarin)_Gentleman",
+       "display_name": "Gentleman (Chinese)"
+      },
+      {
+       "value": "Chinese (Mandarin)_Warm_Bestie",
+       "display_name": "Warm Bestie (Chinese)"
+      },
+      {
+       "value": "Chinese (Mandarin)_Stubborn_Friend",
+       "display_name": "Stubborn Friend (Chinese)"
+      },
+      {
+       "value": "Chinese (Mandarin)_Sweet_Lady",
+       "display_name": "Sweet Lady (Chinese)"
+      },
+      {
+       "value": "Chinese (Mandarin)_Southern_Young_Man",
+       "display_name": "Southern Young Man (Chinese)"
+      },
+      {
+       "value": "Chinese (Mandarin)_Wise_Women",
+       "display_name": "Wise Women (Chinese)"
+      },
+      {
+       "value": "Chinese (Mandarin)_Gentle_Youth",
+       "display_name": "Gentle Youth (Chinese)"
+      },
+      {
+       "value": "Chinese (Mandarin)_Warm_Girl",
+       "display_name": "Warm Girl (Chinese)"
+      },
+      {
+       "value": "Chinese (Mandarin)_Male_Announcer",
+       "display_name": "Male Announcer (Chinese)"
+      },
+      {
+       "value": "Chinese (Mandarin)_Kind-hearted_Elder",
+       "display_name": "Kind-hearted Elder (Chinese)"
+      },
+      {
+       "value": "Chinese (Mandarin)_Cute_Spirit",
+       "display_name": "Cute Spirit (Chinese)"
+      },
+      {
+       "value": "Chinese (Mandarin)_Radio_Host",
+       "display_name": "Radio Host (Chinese)"
+      },
+      {
+       "value": "Chinese (Mandarin)_Lyrical_Voice",
+       "display_name": "Lyrical Voice (Chinese)"
+      },
+      {
+       "value": "Chinese (Mandarin)_Straightforward_Boy",
+       "display_name": "Straightforward Boy (Chinese)"
+      },
+      {
+       "value": "Chinese (Mandarin)_Sincere_Adult",
+       "display_name": "Sincere Adult (Chinese)"
+      },
+      {
+       "value": "Chinese (Mandarin)_Gentle_Senior",
+       "display_name": "Gentle Senior (Chinese)"
+      },
+      {
+       "value": "Chinese (Mandarin)_Crisp_Girl",
+       "display_name": "Crisp Girl (Chinese)"
+      },
+      {
+       "value": "Chinese (Mandarin)_Pure-hearted_Boy",
+       "display_name": "Pure-hearted Boy (Chinese)"
+      },
+      {
+       "value": "Chinese (Mandarin)_Soft_Girl",
+       "display_name": "Soft Girl (Chinese)"
+      },
+      {
+       "value": "Chinese (Mandarin)_IntellectualGirl",
+       "display_name": "Intellectual Girl (Chinese)"
+      },
+      {
+       "value": "Chinese (Mandarin)_Warm_HeartedGirl",
+       "display_name": "Warm-hearted Girl (Chinese)"
+      },
+      {
+       "value": "Chinese (Mandarin)_Laid_BackGirl",
+       "display_name": "Laid-back Girl (Chinese)"
+      },
+      {
+       "value": "Chinese (Mandarin)_ExplorativeGirl",
+       "display_name": "Explorative Girl (Chinese)"
+      },
+      {
+       "value": "Chinese (Mandarin)_Warm-HeartedAunt",
+       "display_name": "Warm-hearted Aunt (Chinese)"
+      },
+      {
+       "value": "Chinese (Mandarin)_BashfulGirl",
+       "display_name": "Bashful Girl (Chinese)"
+      },
+      {
+       "value": "Japanese_IntellectualSenior",
+       "display_name": "Intellectual Senior (Japanese)"
+      },
+      {
+       "value": "Japanese_DecisivePrincess",
+       "display_name": "Decisive Princess (Japanese)"
+      },
+      {
+       "value": "Japanese_LoyalKnight",
+       "display_name": "Loyal Knight (Japanese)"
+      },
+      {
+       "value": "Japanese_DominantMan",
+       "display_name": "Dominant Man (Japanese)"
+      },
+      {
+       "value": "Japanese_SeriousCommander",
+       "display_name": "Serious Commander (Japanese)"
+      },
+      {
+       "value": "Japanese_ColdQueen",
+       "display_name": "Cold Queen (Japanese)"
+      },
+      {
+       "value": "Japanese_DependableWoman",
+       "display_name": "Dependable Woman (Japanese)"
+      },
+      {
+       "value": "Japanese_GentleButler",
+       "display_name": "Gentle Butler (Japanese)"
+      },
+      {
+       "value": "Japanese_KindLady",
+       "display_name": "Kind Lady (Japanese)"
+      },
+      {
+       "value": "Japanese_CalmLady",
+       "display_name": "Calm Lady (Japanese)"
+      },
+      {
+       "value": "Japanese_OptimisticYouth",
+       "display_name": "Optimistic Youth (Japanese)"
+      },
+      {
+       "value": "Japanese_GenerousIzakayaOwner",
+       "display_name": "Generous Izakaya Owner (Japanese)"
+      },
+      {
+       "value": "Japanese_SportyStudent",
+       "display_name": "Sporty Student (Japanese)"
+      },
+      {
+       "value": "Japanese_InnocentBoy",
+       "display_name": "Innocent Boy (Japanese)"
+      },
+      {
+       "value": "Japanese_GracefulMaiden",
+       "display_name": "Graceful Maiden (Japanese)"
+      },
+      {
+       "value": "Cantonese_ProfessionalHost\uff08F)",
+       "display_name": "Professional Female Host (Cantonese)"
+      },
+      {
+       "value": "Cantonese_GentleLady",
+       "display_name": "Gentle Lady (Cantonese)"
+      },
+      {
+       "value": "Cantonese_ProfessionalHost\uff08M)",
+       "display_name": "Professional Male Host (Cantonese)"
+      },
+      {
+       "value": "Cantonese_PlayfulMan",
+       "display_name": "Playful Man (Cantonese)"
+      },
+      {
+       "value": "Cantonese_CuteGirl",
+       "display_name": "Cute Girl (Cantonese)"
+      },
+      {
+       "value": "Cantonese_KindWoman",
+       "display_name": "Kind Woman (Cantonese)"
+      },
+      {
+       "value": "Korean_AirheadedGirl",
+       "display_name": "Airheaded Girl (Korean)"
+      },
+      {
+       "value": "Korean_AthleticGirl",
+       "display_name": "Athletic Girl (Korean)"
+      },
+      {
+       "value": "Korean_AthleticStudent",
+       "display_name": "Athletic Student (Korean)"
+      },
+      {
+       "value": "Korean_BraveAdventurer",
+       "display_name": "Brave Adventurer (Korean)"
+      },
+      {
+       "value": "Korean_BraveFemaleWarrior",
+       "display_name": "Brave Female Warrior (Korean)"
+      },
+      {
+       "value": "Korean_BraveYouth",
+       "display_name": "Brave Youth (Korean)"
+      },
+      {
+       "value": "Korean_CalmGentleman",
+       "display_name": "Calm Gentleman (Korean)"
+      },
+      {
+       "value": "Korean_CalmLady",
+       "display_name": "Calm Lady (Korean)"
+      },
+      {
+       "value": "Korean_CaringWoman",
+       "display_name": "Caring Woman (Korean)"
+      },
+      {
+       "value": "Korean_CharmingElderSister",
+       "display_name": "Charming Elder Sister (Korean)"
+      },
+      {
+       "value": "Korean_CharmingSister",
+       "display_name": "Charming Sister (Korean)"
+      },
+      {
+       "value": "Korean_CheerfulBoyfriend",
+       "display_name": "Cheerful Boyfriend (Korean)"
+      },
+      {
+       "value": "Korean_CheerfulCoolJunior",
+       "display_name": "Cheerful Cool Junior (Korean)"
+      },
+      {
+       "value": "Korean_CheerfulLittleSister",
+       "display_name": "Cheerful Little Sister (Korean)"
+      },
+      {
+       "value": "Korean_ChildhoodFriendGirl",
+       "display_name": "Childhood Friend Girl (Korean)"
+      },
+      {
+       "value": "Korean_CockyGuy",
+       "display_name": "Cocky Guy (Korean)"
+      },
+      {
+       "value": "Korean_ColdGirl",
+       "display_name": "Cold Girl (Korean)"
+      },
+      {
+       "value": "Korean_ColdYoungMan",
+       "display_name": "Cold Young Man (Korean)"
+      },
+      {
+       "value": "Korean_ConfidentBoss",
+       "display_name": "Confident Boss (Korean)"
+      },
+      {
+       "value": "Korean_ConsiderateSenior",
+       "display_name": "Considerate Senior (Korean)"
+      },
+      {
+       "value": "Korean_DecisiveQueen",
+       "display_name": "Decisive Queen (Korean)"
+      },
+      {
+       "value": "Korean_DominantMan",
+       "display_name": "Dominant Man (Korean)"
+      },
+      {
+       "value": "Korean_ElegantPrincess",
+       "display_name": "Elegant Princess (Korean)"
+      },
+      {
+       "value": "Korean_EnchantingSister",
+       "display_name": "Enchanting Sister (Korean)"
+      },
+      {
+       "value": "Korean_EnthusiasticTeen",
+       "display_name": "Enthusiastic Teen (Korean)"
+      },
+      {
+       "value": "Korean_FriendlyBigSister",
+       "display_name": "Friendly Big Sister (Korean)"
+      },
+      {
+       "value": "Korean_GentleBoss",
+       "display_name": "Gentle Boss (Korean)"
+      },
+      {
+       "value": "Korean_GentleWoman",
+       "display_name": "Gentle Woman (Korean)"
+      },
+      {
+       "value": "Korean_HaughtyLady",
+       "display_name": "Haughty Lady (Korean)"
+      },
+      {
+       "value": "Korean_InnocentBoy",
+       "display_name": "Innocent Boy (Korean)"
+      },
+      {
+       "value": "Korean_IntellectualMan",
+       "display_name": "Intellectual Man (Korean)"
+      },
+      {
+       "value": "Korean_IntellectualSenior",
+       "display_name": "Intellectual Senior (Korean)"
+      },
+      {
+       "value": "Korean_LonelyWarrior",
+       "display_name": "Lonely Warrior (Korean)"
+      },
+      {
+       "value": "Korean_MatureLady",
+       "display_name": "Mature Lady (Korean)"
+      },
+      {
+       "value": "Korean_MysteriousGirl",
+       "display_name": "Mysterious Girl (Korean)"
+      },
+      {
+       "value": "Korean_OptimisticYouth",
+       "display_name": "Optimistic Youth (Korean)"
+      },
+      {
+       "value": "Korean_PlayboyCharmer",
+       "display_name": "Playboy Charmer (Korean)"
+      },
+      {
+       "value": "Korean_PossessiveMan",
+       "display_name": "Possessive Man (Korean)"
+      },
+      {
+       "value": "Korean_QuirkyGirl",
+       "display_name": "Quirky Girl (Korean)"
+      },
+      {
+       "value": "Korean_ReliableSister",
+       "display_name": "Reliable Sister (Korean)"
+      },
+      {
+       "value": "Korean_ReliableYouth",
+       "display_name": "Reliable Youth (Korean)"
+      },
+      {
+       "value": "Korean_SassyGirl",
+       "display_name": "Sassy Girl (Korean)"
+      },
+      {
+       "value": "Korean_ShyGirl",
+       "display_name": "Shy Girl (Korean)"
+      },
+      {
+       "value": "Korean_SoothingLady",
+       "display_name": "Soothing Lady (Korean)"
+      },
+      {
+       "value": "Korean_StrictBoss",
+       "display_name": "Strict Boss (Korean)"
+      },
+      {
+       "value": "Korean_SweetGirl",
+       "display_name": "Sweet Girl (Korean)"
+      },
+      {
+       "value": "Korean_ThoughtfulWoman",
+       "display_name": "Thoughtful Woman (Korean)"
+      },
+      {
+       "value": "Korean_WiseElf",
+       "display_name": "Wise Elf (Korean)"
+      },
+      {
+       "value": "Korean_WiseTeacher",
+       "display_name": "Wise Teacher (Korean)"
+      },
+      {
+       "value": "Spanish_SereneWoman",
+       "display_name": "Serene Woman (Spanish)"
+      },
+      {
+       "value": "Spanish_MaturePartner",
+       "display_name": "Mature Partner (Spanish)"
+      },
+      {
+       "value": "Spanish_CaptivatingStoryteller",
+       "display_name": "Captivating Storyteller (Spanish)"
+      },
+      {
+       "value": "Spanish_Narrator",
+       "display_name": "Narrator (Spanish)"
+      },
+      {
+       "value": "Spanish_WiseScholar",
+       "display_name": "Wise Scholar (Spanish)"
+      },
+      {
+       "value": "Spanish_Kind-heartedGirl",
+       "display_name": "Kind-hearted Girl (Spanish)"
+      },
+      {
+       "value": "Spanish_DeterminedManager",
+       "display_name": "Determined Manager (Spanish)"
+      },
+      {
+       "value": "Spanish_BossyLeader",
+       "display_name": "Bossy Leader (Spanish)"
+      },
+      {
+       "value": "Spanish_ReservedYoungMan",
+       "display_name": "Reserved Young Man (Spanish)"
+      },
+      {
+       "value": "Spanish_ConfidentWoman",
+       "display_name": "Confident Woman (Spanish)"
+      },
+      {
+       "value": "Spanish_ThoughtfulMan",
+       "display_name": "Thoughtful Man (Spanish)"
+      },
+      {
+       "value": "Spanish_Strong-WilledBoy",
+       "display_name": "Strong-willed Boy (Spanish)"
+      },
+      {
+       "value": "Spanish_SophisticatedLady",
+       "display_name": "Sophisticated Lady (Spanish)"
+      },
+      {
+       "value": "Spanish_RationalMan",
+       "display_name": "Rational Man (Spanish)"
+      },
+      {
+       "value": "Spanish_AnimeCharacter",
+       "display_name": "Anime Character (Spanish)"
+      },
+      {
+       "value": "Spanish_Deep-tonedMan",
+       "display_name": "Deep-toned Man (Spanish)"
+      },
+      {
+       "value": "Spanish_Fussyhostess",
+       "display_name": "Fussy hostess (Spanish)"
+      },
+      {
+       "value": "Spanish_SincereTeen",
+       "display_name": "Sincere Teen (Spanish)"
+      },
+      {
+       "value": "Spanish_FrankLady",
+       "display_name": "Frank Lady (Spanish)"
+      },
+      {
+       "value": "Spanish_Comedian",
+       "display_name": "Comedian (Spanish)"
+      },
+      {
+       "value": "Spanish_Debator",
+       "display_name": "Debator (Spanish)"
+      },
+      {
+       "value": "Spanish_ToughBoss",
+       "display_name": "Tough Boss (Spanish)"
+      },
+      {
+       "value": "Spanish_Wiselady",
+       "display_name": "Wise Lady (Spanish)"
+      },
+      {
+       "value": "Spanish_Steadymentor",
+       "display_name": "Steady Mentor (Spanish)"
+      },
+      {
+       "value": "Spanish_Jovialman",
+       "display_name": "Jovial Man (Spanish)"
+      },
+      {
+       "value": "Spanish_SantaClaus",
+       "display_name": "Santa Claus (Spanish)"
+      },
+      {
+       "value": "Spanish_Rudolph",
+       "display_name": "Rudolph (Spanish)"
+      },
+      {
+       "value": "Spanish_Intonategirl",
+       "display_name": "Intonate Girl (Spanish)"
+      },
+      {
+       "value": "Spanish_Arnold",
+       "display_name": "Arnold (Spanish)"
+      },
+      {
+       "value": "Spanish_Ghost",
+       "display_name": "Ghost (Spanish)"
+      },
+      {
+       "value": "Spanish_HumorousElder",
+       "display_name": "Humorous Elder (Spanish)"
+      },
+      {
+       "value": "Spanish_EnergeticBoy",
+       "display_name": "Energetic Boy (Spanish)"
+      },
+      {
+       "value": "Spanish_WhimsicalGirl",
+       "display_name": "Whimsical Girl (Spanish)"
+      },
+      {
+       "value": "Spanish_StrictBoss",
+       "display_name": "Strict Boss (Spanish)"
+      },
+      {
+       "value": "Spanish_ReliableMan",
+       "display_name": "Reliable Man (Spanish)"
+      },
+      {
+       "value": "Spanish_SereneElder",
+       "display_name": "Serene Elder (Spanish)"
+      },
+      {
+       "value": "Spanish_AngryMan",
+       "display_name": "Angry Man (Spanish)"
+      },
+      {
+       "value": "Spanish_AssertiveQueen",
+       "display_name": "Assertive Queen (Spanish)"
+      },
+      {
+       "value": "Spanish_CaringGirlfriend",
+       "display_name": "Caring Girlfriend (Spanish)"
+      },
+      {
+       "value": "Spanish_PowerfulSoldier",
+       "display_name": "Powerful Soldier (Spanish)"
+      },
+      {
+       "value": "Spanish_PassionateWarrior",
+       "display_name": "Passionate Warrior (Spanish)"
+      },
+      {
+       "value": "Spanish_ChattyGirl",
+       "display_name": "Chatty Girl (Spanish)"
+      },
+      {
+       "value": "Spanish_RomanticHusband",
+       "display_name": "Romantic Husband (Spanish)"
+      },
+      {
+       "value": "Spanish_CompellingGirl",
+       "display_name": "Compelling Girl (Spanish)"
+      },
+      {
+       "value": "Spanish_PowerfulVeteran",
+       "display_name": "Powerful Veteran (Spanish)"
+      },
+      {
+       "value": "Spanish_SensibleManager",
+       "display_name": "Sensible Manager (Spanish)"
+      },
+      {
+       "value": "Spanish_ThoughtfulLady",
+       "display_name": "Thoughtful Lady (Spanish)"
+      },
+      {
+       "value": "Portuguese_SentimentalLady",
+       "display_name": "Sentimental Lady (Portuguese)"
+      },
+      {
+       "value": "Portuguese_BossyLeader",
+       "display_name": "Bossy Leader (Portuguese)"
+      },
+      {
+       "value": "Portuguese_Wiselady",
+       "display_name": "Wise lady (Portuguese)"
+      },
+      {
+       "value": "Portuguese_Strong-WilledBoy",
+       "display_name": "Strong-willed Boy (Portuguese)"
+      },
+      {
+       "value": "Portuguese_Deep-VoicedGentleman",
+       "display_name": "Deep-voiced Gentleman (Portuguese)"
+      },
+      {
+       "value": "Portuguese_UpsetGirl",
+       "display_name": "Upset Girl (Portuguese)"
+      },
+      {
+       "value": "Portuguese_PassionateWarrior",
+       "display_name": "Passionate Warrior (Portuguese)"
+      },
+      {
+       "value": "Portuguese_AnimeCharacter",
+       "display_name": "Anime Character (Portuguese)"
+      },
+      {
+       "value": "Portuguese_ConfidentWoman",
+       "display_name": "Confident Woman (Portuguese)"
+      },
+      {
+       "value": "Portuguese_AngryMan",
+       "display_name": "Angry Man (Portuguese)"
+      },
+      {
+       "value": "Portuguese_CaptivatingStoryteller",
+       "display_name": "Captivating Storyteller (Portuguese)"
+      },
+      {
+       "value": "Portuguese_Godfather",
+       "display_name": "Godfather (Portuguese)"
+      },
+      {
+       "value": "Portuguese_ReservedYoungMan",
+       "display_name": "Reserved Young Man (Portuguese)"
+      },
+      {
+       "value": "Portuguese_SmartYoungGirl",
+       "display_name": "Smart Young Girl (Portuguese)"
+      },
+      {
+       "value": "Portuguese_Kind-heartedGirl",
+       "display_name": "Kind-hearted Girl (Portuguese)"
+      },
+      {
+       "value": "Portuguese_Pompouslady",
+       "display_name": "Pompous lady (Portuguese)"
+      },
+      {
+       "value": "Portuguese_Grinch",
+       "display_name": "Grinch (Portuguese)"
+      },
+      {
+       "value": "Portuguese_Debator",
+       "display_name": "Debator (Portuguese)"
+      },
+      {
+       "value": "Portuguese_SweetGirl",
+       "display_name": "Sweet Girl (Portuguese)"
+      },
+      {
+       "value": "Portuguese_AttractiveGirl",
+       "display_name": "Attractive Girl (Portuguese)"
+      },
+      {
+       "value": "Portuguese_ThoughtfulMan",
+       "display_name": "Thoughtful Man (Portuguese)"
+      },
+      {
+       "value": "Portuguese_PlayfulGirl",
+       "display_name": "Playful Girl (Portuguese)"
+      },
+      {
+       "value": "Portuguese_GorgeousLady",
+       "display_name": "Gorgeous Lady (Portuguese)"
+      },
+      {
+       "value": "Portuguese_LovelyLady",
+       "display_name": "Lovely Lady (Portuguese)"
+      },
+      {
+       "value": "Portuguese_SereneWoman",
+       "display_name": "Serene Woman (Portuguese)"
+      },
+      {
+       "value": "Portuguese_SadTeen",
+       "display_name": "Sad Teen (Portuguese)"
+      },
+      {
+       "value": "Portuguese_MaturePartner",
+       "display_name": "Mature Partner (Portuguese)"
+      },
+      {
+       "value": "Portuguese_Comedian",
+       "display_name": "Comedian (Portuguese)"
+      },
+      {
+       "value": "Portuguese_NaughtySchoolgirl",
+       "display_name": "Naughty Schoolgirl (Portuguese)"
+      },
+      {
+       "value": "Portuguese_Narrator",
+       "display_name": "Narrator (Portuguese)"
+      },
+      {
+       "value": "Portuguese_ToughBoss",
+       "display_name": "Tough Boss (Portuguese)"
+      },
+      {
+       "value": "Portuguese_Fussyhostess",
+       "display_name": "Fussy hostess (Portuguese)"
+      },
+      {
+       "value": "Portuguese_Dramatist",
+       "display_name": "Dramatist (Portuguese)"
+      },
+      {
+       "value": "Portuguese_Steadymentor",
+       "display_name": "Steady Mentor (Portuguese)"
+      },
+      {
+       "value": "Portuguese_Jovialman",
+       "display_name": "Jovial Man (Portuguese)"
+      },
+      {
+       "value": "Portuguese_CharmingQueen",
+       "display_name": "Charming Queen (Portuguese)"
+      },
+      {
+       "value": "Portuguese_SantaClaus",
+       "display_name": "Santa Claus (Portuguese)"
+      },
+      {
+       "value": "Portuguese_Rudolph",
+       "display_name": "Rudolph (Portuguese)"
+      },
+      {
+       "value": "Portuguese_Arnold",
+       "display_name": "Arnold (Portuguese)"
+      },
+      {
+       "value": "Portuguese_CharmingSanta",
+       "display_name": "Charming Santa (Portuguese)"
+      },
+      {
+       "value": "Portuguese_CharmingLady",
+       "display_name": "Charming Lady (Portuguese)"
+      },
+      {
+       "value": "Portuguese_Ghost",
+       "display_name": "Ghost (Portuguese)"
+      },
+      {
+       "value": "Portuguese_HumorousElder",
+       "display_name": "Humorous Elder (Portuguese)"
+      },
+      {
+       "value": "Portuguese_CalmLeader",
+       "display_name": "Calm Leader (Portuguese)"
+      },
+      {
+       "value": "Portuguese_GentleTeacher",
+       "display_name": "Gentle Teacher (Portuguese)"
+      },
+      {
+       "value": "Portuguese_EnergeticBoy",
+       "display_name": "Energetic Boy (Portuguese)"
+      },
+      {
+       "value": "Portuguese_ReliableMan",
+       "display_name": "Reliable Man (Portuguese)"
+      },
+      {
+       "value": "Portuguese_SereneElder",
+       "display_name": "Serene Elder (Portuguese)"
+      },
+      {
+       "value": "Portuguese_GrimReaper",
+       "display_name": "Grim Reaper (Portuguese)"
+      },
+      {
+       "value": "Portuguese_AssertiveQueen",
+       "display_name": "Assertive Queen (Portuguese)"
+      },
+      {
+       "value": "Portuguese_WhimsicalGirl",
+       "display_name": "Whimsical Girl (Portuguese)"
+      },
+      {
+       "value": "Portuguese_StressedLady",
+       "display_name": "Stressed Lady (Portuguese)"
+      },
+      {
+       "value": "Portuguese_FriendlyNeighbor",
+       "display_name": "Friendly Neighbor (Portuguese)"
+      },
+      {
+       "value": "Portuguese_CaringGirlfriend",
+       "display_name": "Caring Girlfriend (Portuguese)"
+      },
+      {
+       "value": "Portuguese_PowerfulSoldier",
+       "display_name": "Powerful Soldier (Portuguese)"
+      },
+      {
+       "value": "Portuguese_FascinatingBoy",
+       "display_name": "Fascinating Boy (Portuguese)"
+      },
+      {
+       "value": "Portuguese_RomanticHusband",
+       "display_name": "Romantic Husband (Portuguese)"
+      },
+      {
+       "value": "Portuguese_StrictBoss",
+       "display_name": "Strict Boss (Portuguese)"
+      },
+      {
+       "value": "Portuguese_InspiringLady",
+       "display_name": "Inspiring Lady (Portuguese)"
+      },
+      {
+       "value": "Portuguese_PlayfulSpirit",
+       "display_name": "Playful Spirit (Portuguese)"
+      },
+      {
+       "value": "Portuguese_ElegantGirl",
+       "display_name": "Elegant Girl (Portuguese)"
+      },
+      {
+       "value": "Portuguese_CompellingGirl",
+       "display_name": "Compelling Girl (Portuguese)"
+      },
+      {
+       "value": "Portuguese_PowerfulVeteran",
+       "display_name": "Powerful Veteran (Portuguese)"
+      },
+      {
+       "value": "Portuguese_SensibleManager",
+       "display_name": "Sensible Manager (Portuguese)"
+      },
+      {
+       "value": "Portuguese_ThoughtfulLady",
+       "display_name": "Thoughtful Lady (Portuguese)"
+      },
+      {
+       "value": "Portuguese_TheatricalActor",
+       "display_name": "Theatrical Actor (Portuguese)"
+      },
+      {
+       "value": "Portuguese_FragileBoy",
+       "display_name": "Fragile Boy (Portuguese)"
+      },
+      {
+       "value": "Portuguese_ChattyGirl",
+       "display_name": "Chatty Girl (Portuguese)"
+      },
+      {
+       "value": "Portuguese_Conscientiousinstructor",
+       "display_name": "Conscientious Instructor (Portuguese)"
+      },
+      {
+       "value": "Portuguese_RationalMan",
+       "display_name": "Rational Man (Portuguese)"
+      },
+      {
+       "value": "Portuguese_WiseScholar",
+       "display_name": "Wise Scholar (Portuguese)"
+      },
+      {
+       "value": "Portuguese_FrankLady",
+       "display_name": "Frank Lady (Portuguese)"
+      },
+      {
+       "value": "Portuguese_DeterminedManager",
+       "display_name": "Determined Manager (Portuguese)"
+      },
+      {
+       "value": "French_Male_Speech_New",
+       "display_name": "Level-Headed Man (French)"
+      },
+      {
+       "value": "French_Female_News Anchor",
+       "display_name": "Patient Female Presenter (French)"
+      },
+      {
+       "value": "French_CasualMan",
+       "display_name": "Casual Man (French)"
+      },
+      {
+       "value": "French_MovieLeadFemale",
+       "display_name": "Movie Lead Female (French)"
+      },
+      {
+       "value": "French_FemaleAnchor",
+       "display_name": "Female Anchor (French)"
+      },
+      {
+       "value": "French_MaleNarrator",
+       "display_name": "Male Narrator (French)"
+      },
+      {
+       "value": "Indonesian_SweetGirl",
+       "display_name": "Sweet Girl (Indonesian)"
+      },
+      {
+       "value": "Indonesian_ReservedYoungMan",
+       "display_name": "Reserved Young Man (Indonesian)"
+      },
+      {
+       "value": "Indonesian_CharmingGirl",
+       "display_name": "Charming Girl (Indonesian)"
+      },
+      {
+       "value": "Indonesian_CalmWoman",
+       "display_name": "Calm Woman (Indonesian)"
+      },
+      {
+       "value": "Indonesian_ConfidentWoman",
+       "display_name": "Confident Woman (Indonesian)"
+      },
+      {
+       "value": "Indonesian_CaringMan",
+       "display_name": "Caring Man (Indonesian)"
+      },
+      {
+       "value": "Indonesian_BossyLeader",
+       "display_name": "Bossy Leader (Indonesian)"
+      },
+      {
+       "value": "Indonesian_DeterminedBoy",
+       "display_name": "Determined Boy (Indonesian)"
+      },
+      {
+       "value": "Indonesian_GentleGirl",
+       "display_name": "Gentle Girl (Indonesian)"
+      },
+      {
+       "value": "German_FriendlyMan",
+       "display_name": "Friendly Man (German)"
+      },
+      {
+       "value": "German_SweetLady",
+       "display_name": "Sweet Lady (German)"
+      },
+      {
+       "value": "German_PlayfulMan",
+       "display_name": "Playful Man (German)"
+      },
+      {
+       "value": "Russian_HandsomeChildhoodFriend",
+       "display_name": "Handsome Childhood Friend (Russian)"
+      },
+      {
+       "value": "Russian_BrightHeroine",
+       "display_name": "Bright Queen (Russian)"
+      },
+      {
+       "value": "Russian_AmbitiousWoman",
+       "display_name": "Ambitious Woman (Russian)"
+      },
+      {
+       "value": "Russian_ReliableMan",
+       "display_name": "Reliable Man (Russian)"
+      },
+      {
+       "value": "Russian_CrazyQueen",
+       "display_name": "Crazy Girl (Russian)"
+      },
+      {
+       "value": "Russian_PessimisticGirl",
+       "display_name": "Pessimistic Girl (Russian)"
+      },
+      {
+       "value": "Russian_AttractiveGuy",
+       "display_name": "Attractive Guy (Russian)"
+      },
+      {
+       "value": "Russian_Bad-temperedBoy",
+       "display_name": "Bad-tempered Boy (Russian)"
+      },
+      {
+       "value": "Italian_BraveHeroine",
+       "display_name": "Brave Heroine (Italian)"
+      },
+      {
+       "value": "Italian_Narrator",
+       "display_name": "Narrator (Italian)"
+      },
+      {
+       "value": "Italian_WanderingSorcerer",
+       "display_name": "Wandering Sorcerer (Italian)"
+      },
+      {
+       "value": "Italian_DiligentLeader",
+       "display_name": "Diligent Leader (Italian)"
+      },
+      {
+       "value": "Dutch_kindhearted_girl",
+       "display_name": "Kind-hearted girl (Dutch)"
+      },
+      {
+       "value": "Dutch_bossy_leader",
+       "display_name": "Bossy leader (Dutch)"
+      },
+      {
+       "value": "Vietnamese_kindhearted_girl",
+       "display_name": "Kind-hearted girl (Vietnamese)"
+      },
+      {
+       "value": "Arabic_CalmWoman",
+       "display_name": "Calm Woman (Arabic)"
+      },
+      {
+       "value": "Arabic_FriendlyGuy",
+       "display_name": "Friendly Guy (Arabic)"
+      },
+      {
+       "value": "Turkish_CalmWoman",
+       "display_name": "Calm Woman (Turkish)"
+      },
+      {
+       "value": "Turkish_Trustworthyman",
+       "display_name": "Trustworthy man (Turkish)"
+      },
+      {
+       "value": "Ukrainian_CalmWoman",
+       "display_name": "Calm Woman (Ukrainian)"
+      },
+      {
+       "value": "Ukrainian_WiseScholar",
+       "display_name": "Wise Scholar (Ukrainian)"
+      },
+      {
+       "value": "Thai_male_1_sample8",
+       "display_name": "Serene Man (Thai)"
+      },
+      {
+       "value": "Thai_male_2_sample2",
+       "display_name": "Friendly Man (Thai)"
+      },
+      {
+       "value": "Thai_female_1_sample1",
+       "display_name": "Confident Woman (Thai)"
+      },
+      {
+       "value": "Thai_female_2_sample2",
+       "display_name": "Energetic Woman (Thai)"
+      },
+      {
+       "value": "Polish_male_1_sample4",
+       "display_name": "Male Narrator (Polish)"
+      },
+      {
+       "value": "Polish_male_2_sample3",
+       "display_name": "Male Anchor (Polish)"
+      },
+      {
+       "value": "Polish_female_1_sample1",
+       "display_name": "Calm Woman (Polish)"
+      },
+      {
+       "value": "Polish_female_2_sample3",
+       "display_name": "Casual Woman (Polish)"
+      },
+      {
+       "value": "Romanian_male_1_sample2",
+       "display_name": "Reliable Man (Romanian)"
+      },
+      {
+       "value": "Romanian_male_2_sample1",
+       "display_name": "Energetic Youth (Romanian)"
+      },
+      {
+       "value": "Romanian_female_1_sample4",
+       "display_name": "Optimistic Youth (Romanian)"
+      },
+      {
+       "value": "Romanian_female_2_sample1",
+       "display_name": "Gentle Woman (Romanian)"
+      },
+      {
+       "value": "greek_male_1a_v1",
+       "display_name": "Thoughtful Mentor (Greek)"
+      },
+      {
+       "value": "Greek_female_1_sample1",
+       "display_name": "Gentle Lady (Greek)"
+      },
+      {
+       "value": "Greek_female_2_sample3",
+       "display_name": "Girl Next Door (Greek)"
+      },
+      {
+       "value": "czech_male_1_v1",
+       "display_name": "Assured Presenter (Czech)"
+      },
+      {
+       "value": "czech_female_5_v7",
+       "display_name": "Steadfast Narrator (Czech)"
+      },
+      {
+       "value": "czech_female_2_v2",
+       "display_name": "Elegant Lady (Czech)"
+      },
+      {
+       "value": "finnish_male_3_v1",
+       "display_name": "Upbeat Man (Finnish)"
+      },
+      {
+       "value": "finnish_male_1_v2",
+       "display_name": "Friendly Boy (Finnish)"
+      },
+      {
+       "value": "finnish_female_4_v1",
+       "display_name": "Assertive Woman (Finnish)"
+      },
+      {
+       "value": "hindi_male_1_v2",
+       "display_name": "Trustworthy Advisor (Hindi)"
+      },
+      {
+       "value": "hindi_female_2_v1",
+       "display_name": "Tranquil Woman (Hindi)"
+      },
+      {
+       "value": "hindi_female_1_v2",
+       "display_name": "News Anchor (Hindi)"
+      }
+     ],
+     "order": 2
+    },
+    {
+     "name": "speed",
+     "display_name": "Speech Speed",
+     "description": "Speech speed multiplier.",
+     "type": "float",
+     "required": false,
+     "default_value": 1,
+     "min_value": 0.5,
+     "max_value": 2,
+     "step": 0.1,
+     "order": 3
+    },
+    {
+     "name": "vol",
+     "display_name": "Volume",
+     "description": "Volume level multiplier.",
+     "type": "float",
+     "required": false,
+     "default_value": 1,
+     "min_value": 0,
+     "max_value": 10,
+     "step": 0.1,
+     "order": 4
+    },
+    {
+     "name": "pitch",
+     "display_name": "Pitch",
+     "description": "Pitch adjustment in semitones.",
+     "type": "integer",
+     "required": false,
+     "default_value": 0,
+     "min_value": -12,
+     "max_value": 12,
+     "step": 1,
+     "order": 5
+    },
+    {
+     "name": "emotion",
+     "display_name": "Emotion",
+     "description": "Emotion control for synthesized speech. By default, the model automatically selects the most natural emotion based on text. Manual specification is only recommended when explicitly needed.",
+     "type": "enum",
+     "required": false,
+     "default_value": "auto",
+     "options": [
+      {
+       "value": "auto",
+       "display_name": "Auto"
+      },
+      {
+       "value": "calm",
+       "display_name": "Calm"
+      },
+      {
+       "value": "happy",
+       "display_name": "Happy"
+      },
+      {
+       "value": "sad",
+       "display_name": "Sad"
+      },
+      {
+       "value": "angry",
+       "display_name": "Angry"
+      },
+      {
+       "value": "fearful",
+       "display_name": "Fearful"
+      },
+      {
+       "value": "disgusted",
+       "display_name": "Disgusted"
+      },
+      {
+       "value": "surprised",
+       "display_name": "Surprised"
+      }
+     ],
+     "order": 6
+    },
+    {
+     "name": "language_boost",
+     "display_name": "Language Boost",
+     "description": "Controls whether recognition for specific minority languages and dialects is enhanced. Default is null. If the language type is unknown, set to 'auto' and the model will automatically detect it.",
+     "type": "enum",
+     "required": false,
+     "default_value": "auto",
+     "options": [
+      {
+       "value": "null",
+       "display_name": "None"
+      },
+      {
+       "value": "auto",
+       "display_name": "Auto"
+      },
+      {
+       "value": "Chinese",
+       "display_name": "Chinese"
+      },
+      {
+       "value": "Chinese,Yue",
+       "display_name": "Chinese (Cantonese)"
+      },
+      {
+       "value": "English",
+       "display_name": "English"
+      },
+      {
+       "value": "Arabic",
+       "display_name": "Arabic"
+      },
+      {
+       "value": "Russian",
+       "display_name": "Russian"
+      },
+      {
+       "value": "Spanish",
+       "display_name": "Spanish"
+      },
+      {
+       "value": "French",
+       "display_name": "French"
+      },
+      {
+       "value": "Portuguese",
+       "display_name": "Portuguese"
+      },
+      {
+       "value": "German",
+       "display_name": "German"
+      },
+      {
+       "value": "Turkish",
+       "display_name": "Turkish"
+      },
+      {
+       "value": "Dutch",
+       "display_name": "Dutch"
+      },
+      {
+       "value": "Ukrainian",
+       "display_name": "Ukrainian"
+      },
+      {
+       "value": "Vietnamese",
+       "display_name": "Vietnamese"
+      },
+      {
+       "value": "Indonesian",
+       "display_name": "Indonesian"
+      },
+      {
+       "value": "Japanese",
+       "display_name": "Japanese"
+      },
+      {
+       "value": "Italian",
+       "display_name": "Italian"
+      },
+      {
+       "value": "Korean",
+       "display_name": "Korean"
+      },
+      {
+       "value": "Thai",
+       "display_name": "Thai"
+      },
+      {
+       "value": "Polish",
+       "display_name": "Polish"
+      },
+      {
+       "value": "Romanian",
+       "display_name": "Romanian"
+      },
+      {
+       "value": "Greek",
+       "display_name": "Greek"
+      },
+      {
+       "value": "Czech",
+       "display_name": "Czech"
+      },
+      {
+       "value": "Finnish",
+       "display_name": "Finnish"
+      },
+      {
+       "value": "Hindi",
+       "display_name": "Hindi"
+      },
+      {
+       "value": "Bulgarian",
+       "display_name": "Bulgarian"
+      },
+      {
+       "value": "Danish",
+       "display_name": "Danish"
+      },
+      {
+       "value": "Hebrew",
+       "display_name": "Hebrew"
+      },
+      {
+       "value": "Malay",
+       "display_name": "Malay"
+      },
+      {
+       "value": "Persian",
+       "display_name": "Persian"
+      },
+      {
+       "value": "Slovak",
+       "display_name": "Slovak"
+      },
+      {
+       "value": "Swedish",
+       "display_name": "Swedish"
+      },
+      {
+       "value": "Croatian",
+       "display_name": "Croatian"
+      },
+      {
+       "value": "Filipino",
+       "display_name": "Filipino"
+      },
+      {
+       "value": "Hungarian",
+       "display_name": "Hungarian"
+      },
+      {
+       "value": "Norwegian",
+       "display_name": "Norwegian"
+      },
+      {
+       "value": "Slovenian",
+       "display_name": "Slovenian"
+      },
+      {
+       "value": "Catalan",
+       "display_name": "Catalan"
+      },
+      {
+       "value": "Nynorsk",
+       "display_name": "Nynorsk"
+      },
+      {
+       "value": "Tamil",
+       "display_name": "Tamil"
+      },
+      {
+       "value": "Afrikaans",
+       "display_name": "Afrikaans"
+      }
+     ],
+     "order": 7
+    },
+    {
+     "name": "format",
+     "display_name": "Audio Format",
+     "description": "Specifies the format of the generated audio. Default is mp3.",
+     "type": "enum",
+     "required": false,
+     "default_value": "mp3",
+     "options": [
+      {
+       "value": "mp3",
+       "display_name": "MP3"
+      },
+      {
+       "value": "flac",
+       "display_name": "FLAC"
+      }
+     ],
+     "order": 8
+    },
+    {
+     "name": "audio_sample_rate",
+     "display_name": "Sample Rate",
+     "description": "Specifies the sampling rate of the generated audio. Default is 32000 Hz.",
+     "type": "enum",
+     "required": false,
+     "default_value": "32000",
+     "options": [
+      {
+       "value": "8000",
+       "display_name": "8 kHz"
+      },
+      {
+       "value": "16000",
+       "display_name": "16 kHz"
+      },
+      {
+       "value": "22050",
+       "display_name": "22.05 kHz"
+      },
+      {
+       "value": "24000",
+       "display_name": "24 kHz"
+      },
+      {
+       "value": "32000",
+       "display_name": "32 kHz"
+      },
+      {
+       "value": "44100",
+       "display_name": "44.1 kHz"
+      }
+     ],
+     "order": 9
+    },
+    {
+     "name": "bitrate",
+     "display_name": "Bitrate",
+     "description": "Specifies the bitrate of the generated audio. Default is 128000. Note: This parameter only applies to audio in mp3 format.",
+     "type": "enum",
+     "required": false,
+     "default_value": "128000",
+     "options": [
+      {
+       "value": "32000",
+       "display_name": "32 kbps"
+      },
+      {
+       "value": "64000",
+       "display_name": "64 kbps"
+      },
+      {
+       "value": "128000",
+       "display_name": "128 kbps"
+      },
+      {
+       "value": "256000",
+       "display_name": "256 kbps"
+      }
+     ],
+     "order": 10
+    },
+    {
+     "name": "channel",
+     "display_name": "Channels",
+     "description": "Specifies the number of audio channels. 1 = mono, 2 = stereo. Default is 2 (stereo).",
+     "type": "enum",
+     "required": false,
+     "default_value": "2",
+     "options": [
+      {
+       "value": "1",
+       "display_name": "Mono (Single channel)"
+      },
+      {
+       "value": "2",
+       "display_name": "Stereo (Dual channel)"
+      }
+     ],
+     "order": 11
+    },
+    {
+     "name": "vm_pitch",
+     "display_name": "Voice Modify Pitch",
+     "description": "Voice modification pitch adjustment. Adjusts the pitch of the synthesized voice for voice-changing effects. Range: -100 (lower) to 100 (higher).",
+     "type": "integer",
+     "required": false,
+     "default_value": 0,
+     "min_value": -100,
+     "max_value": 100,
+     "step": 1,
+     "order": 12
+    },
+    {
+     "name": "intensity",
+     "display_name": "Voice Intensity",
+     "description": "Voice intensity adjustment. Controls the strength/power of the voice. Range: -100 (weaker) to 100 (stronger).",
+     "type": "integer",
+     "required": false,
+     "default_value": 0,
+     "min_value": -100,
+     "max_value": 100,
+     "step": 1,
+     "order": 13
+    },
+    {
+     "name": "timbre",
+     "display_name": "Voice Timbre",
+     "description": "Voice timbre adjustment. Modifies the tonal quality and character of the voice. Range: -100 to 100.",
+     "type": "integer",
+     "required": false,
+     "default_value": 0,
+     "min_value": -100,
+     "max_value": 100,
+     "step": 1,
+     "order": 14
+    },
+    {
+     "name": "sound_effects",
+     "display_name": "Sound Effects",
+     "description": "Applies special sound effects to the synthesized voice. These effects can create atmospheric or stylistic variations.",
+     "type": "enum",
+     "required": false,
+     "default_value": "",
+     "options": [
+      {
+       "value": "",
+       "display_name": "None"
+      },
+      {
+       "value": "spacious_echo",
+       "display_name": "Spacious Echo"
+      },
+      {
+       "value": "auditorium_echo",
+       "display_name": "Auditorium Echo"
+      },
+      {
+       "value": "lofi_telephone",
+       "display_name": "Lo-Fi Telephone"
+      },
+      {
+       "value": "robotic",
+       "display_name": "Robotic"
+      }
+     ],
+     "order": 15
+    }
+   ],
+   "price_info": {
+    "pricing_type": "per one thousand character",
+    "price": 60000,
+    "unit": "1k character"
+   },
+   "pricing_details": ""
+  },
+  {
+   "model": "minimax-music-2.5",
+   "display_name": "minimax-music-2.5",
+   "model_type": "audio",
+   "status": "active",
+   "qworkers": 1,
+   "modalities": {
+    "input": [
+     {
+      "type": "text",
+      "required": true
+     }
+    ],
+    "output": [
+     {
+      "type": "audio",
+      "required": true
+     }
+    ]
+   },
+   "model_metadata": {
+    "visibility": "visible",
+    "delivery_mode": "sync"
+   },
+   "parameters": [
+    {
+     "name": "lyrics",
+     "display_name": "Lyrics",
+     "description": "Song lyrics (1-3500 characters). Use line breaks to separate lines. You can add structure tags like [Verse], [Chorus], [Bridge], [Intro], [Outro] to enhance arrangement.",
+     "type": "string",
+     "required": true,
+     "default_value": "",
+     "order": 1
+    },
+    {
+     "name": "prompt",
+     "display_name": "Style Prompt",
+     "description": "A description of the music style, mood, and scenario (0-2000 characters). For example: 'Pop, melancholic, perfect for a rainy night' or 'Upbeat electronic, energetic, dance club'.",
+     "type": "string",
+     "required": false,
+     "default_value": "",
+     "order": 2
+    },
+    {
+     "name": "sample_rate",
+     "display_name": "Sample Rate",
+     "description": "Audio sample rate in Hz.",
+     "type": "enum",
+     "required": false,
+     "default_value": 44100,
+     "options": [
+      {
+       "value": 16000,
+       "display_name": "16000 Hz"
+      },
+      {
+       "value": 24000,
+       "display_name": "24000 Hz"
+      },
+      {
+       "value": 32000,
+       "display_name": "32000 Hz"
+      },
+      {
+       "value": 44100,
+       "display_name": "44100 Hz"
+      }
+     ],
+     "order": 3
+    },
+    {
+     "name": "bitrate",
+     "display_name": "Bitrate",
+     "description": "Audio bitrate in bps. Higher bitrate means better quality.",
+     "type": "enum",
+     "required": false,
+     "default_value": 256000,
+     "options": [
+      {
+       "value": 32000,
+       "display_name": "32 kbps"
+      },
+      {
+       "value": 64000,
+       "display_name": "64 kbps"
+      },
+      {
+       "value": 128000,
+       "display_name": "128 kbps"
+      },
+      {
+       "value": 256000,
+       "display_name": "256 kbps"
+      }
+     ],
+     "order": 4
+    },
+    {
+     "name": "format",
+     "display_name": "Output Format",
+     "description": "Output audio format.",
+     "type": "enum",
+     "required": false,
+     "default_value": "mp3",
+     "options": [
+      {
+       "value": "mp3",
+       "display_name": "MP3"
+      },
+      {
+       "value": "wav",
+       "display_name": "WAV"
+      },
+      {
+       "value": "pcm",
+       "display_name": "PCM"
+      }
+     ],
+     "order": 5
+    }
+   ],
+   "price_info": {
+    "pricing_type": "per request",
+    "price": 150000,
+    "unit": "song (up to 5 minutes)"
+   },
+   "pricing_details": "$0.15 per song (up to 5 minutes)"
+  }
+ ]
+}

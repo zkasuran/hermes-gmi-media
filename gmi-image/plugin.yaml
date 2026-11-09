@@ -1,0 +1,8 @@
+name: gmi-image
+version: 0.1.0
+description: "Adds GMI Cloud image with Seedream and Gemini models and spends GMI credits."
+author: zkasuran
+kind: backend
+requires_hermes: ">=0.21.6"
+requires_env:
+  - GMI_API_KEY

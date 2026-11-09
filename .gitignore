@@ -1,0 +1,9 @@
+.astra-home/
+research/
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+live-output/
+SPEC.md
+CHECKPOINT.md

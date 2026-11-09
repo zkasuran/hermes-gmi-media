@@ -1,0 +1,8 @@
+name: gmi-speech
+version: 0.1.0
+description: "Adds GMI Cloud speech with MiniMax and Inworld models and spends GMI credits."
+author: zkasuran
+kind: backend
+requires_hermes: ">=0.21.6"
+requires_env:
+  - GMI_API_KEY

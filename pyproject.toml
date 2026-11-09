@@ -1,0 +1,5 @@
+# Requires Python >=3.11. This repository is not a Python distribution.
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = [".", "tests"]
+addopts = "-p no:cacheprovider"

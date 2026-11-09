@@ -1,0 +1,8 @@
+name: gmi-video
+version: 0.1.0
+description: "Adds GMI Cloud video with Kling and Hailuo models and spends GMI credits."
+author: zkasuran
+kind: backend
+requires_hermes: ">=0.21.6"
+requires_env:
+  - GMI_API_KEY
